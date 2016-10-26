@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" href="../public/js/plugin/fullpage/jquery.fullPage.css">
+    <link rel="stylesheet" href="../public/js/plugin/fullpage/jquery.fullPage.theme.ppt.black.green.css">
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/plugin/fullpage/jquery.fullPage.js"></script>
+    <script>
+        $(function(){
+            $('.ppt').fullpage({ });
+        });
+    </script>
+</head>
+<body>
+<div class="ppt">
+    <div class="section">
+        <h3>jq事件</h3>
+    </div>
+    <div class="section">
+        <h3>学习目标</h3>
+        <ul class="green">
+            <li>click()</li>
+            <li>keypress()</li>
+            <li>on()</li>
+            <li>事件回调函数的this的用法</li>
+        </ul>
+    </div>
+    <div class="section">
+        <div class="slide">
+            <h3>click()</h3>
+            <p>
+                <img src="../public/img/jq-click.png" alt="">
+            </p>
+        </div>
+        <div class="slide">
+            <h3>keypress()</h3>
+            <p>
+                <img src="../public/img/jq-keypress.png" alt="">
+            </p>
+        </div>
+        <div class="slide">
+            <h3>on()</h3>
+            <p>
+                <img src="../public/img/jq-on.png" alt="">
+            </p>
+        </div>
+        <div class="slide">
+            <h3>回调函数的this</h3>
+            <ul>
+                <li>dom元素：document.getElementById()</li>
+                <li>jq元素：$()</li>
+                <li>dom元素转换成jq元素</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <h3>练习</h3>
+        <p class="green">html代码在 4-jq事件-练习.html</p>
+        <ul>
+            <li>通过事件简写的方式：点击按钮后alert一段话</li>
+            <li>通过事件标准的方式(on)：点击按钮后alert一段话</li>
+            <li>文本框输入的时候按回车，就通过this获取文本框输入的内容，并alert这些内容</li>
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>

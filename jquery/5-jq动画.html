@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" href="../public/js/plugin/fullpage/jquery.fullPage.css">
+    <link rel="stylesheet" href="../public/js/plugin/fullpage/jquery.fullPage.theme.ppt.black.green.css">
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/plugin/fullpage/jquery.fullPage.js"></script>
+    <script>
+        $(function(){
+            $('.ppt').fullpage({ });
+        });
+    </script>
+</head>
+<body>
+<div class="ppt">
+    <div class="section">
+        <h3>jq常用动画</h3>
+    </div>
+    <div class="section">
+        <h3>学习目标</h3>
+        <ul class="green">
+            <li>常用动画</li>
+            <li>自定义动画-animate()</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h3>jq动画</h3>
+        <p class="green">数字参数是动画时间，还可以加回调函数</p>
+        <ul>
+            <li>隐藏:$('#box').hide(400, function(){ });</li>
+            <li>显示:$('#box').show(400, function(){ });</li>
+            <li>隐藏显示切换:$('#box').toggle(400, function(){ });</li>
+            <li>渐渐出现:$('#box').fadeIn(400, function(){ });</li>
+            <li>渐渐隐藏:$('#box').fadeOut(400, function(){ });</li>
+            <li>渐渐出现隐藏切换:$('#box').fadeToggle(400, function(){ });</li>
+            <li>渐渐出现到指定的透明度:$('#box').fadeTo(400,0.5, function(){ });</li>
+            <li>自定义动画:$('#box').animate({'width':600,'height':600}, 1000, function () { });</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h3>练习</h3>
+        <p class="green">html代码在 5-jq动画-练习.html</p>
+        <ul>
+            <li>点击按钮，box隐藏，动画时间为400毫秒</li>
+            <li>点击按钮，box显示，动画时间为600毫秒</li>
+            <li>点击按钮，box高度宽度都改成400px</li>
+            <li>点击火箭，页面滚到最上边</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" href="../public/js/plugin/fullpage/jquery.fullPage.css">
+    <link rel="stylesheet" href="../public/js/plugin/fullpage/jquery.fullPage.theme.ppt.black.green.css">
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/plugin/fullpage/jquery.fullPage.js"></script>
+    <script>
+        $(function(){
+            $('.ppt').fullpage({ });
+        });
+    </script>
+</head>
+<body>
+<div class="ppt">
+    <div class="section">
+        <h3>jq常用方法</h3>
+    </div>
+    <div class="section">
+        <h3>学习目标</h3>
+        <ul class="green">
+            <li>val()</li>
+            <li>html()</li>
+            <li>attr()</li>
+            <li>removeAttr()</li>
+            <li>addClass()</li>
+            <li>removeClass()</li>
+            <li>toggleClass()</li>
+            <li>hasClass()</li>
+            <li>append()</li>
+            <li>appendTo()</li>
+            <li>prepend()</li>
+            <li>prependTo()</li>
+        </ul>
+    </div>
+    <div class="section">
+        <div class="slide">
+            <h3>val()</h3>
+            <p>
+                <img src="../public/img/jq-val.png" alt="">
+            </p>
+        </div>
+        <div class="slide">
+            <h3>html()</h3>
+            <p>
+                <img src="../public/img/jq-html.png" alt="">
+            </p>
+        </div>
+        <div class="slide">
+            <h3>属性常用方法</h3>
+            <p>
+                <img src="../public/img/jq-attr.png" alt="">
+            </p>
+        </div>
+        <div class="slide">
+            <h3>类常用方法</h3>
+            <p>
+                <img src="../public/img/jq-class.png" alt="">
+            </p>
+        </div>
+        <div class="slide">
+            <h3>插入内容常用方法</h3>
+            <p>
+                <img src="../public/img/jq-append.png" alt="">
+            </p>
+        </div>
+    </div>
+    <div class="section">
+        <h3>练习</h3>
+        <p class="green">html代码在 3-jq常用方法-练习.html</p>
+        <ul>
+            <li>修改h1的内容为：“&lt;span&gt;我在学习jq&lt;/span&gt;”，并且这个内容用span标签包裹起来</li>
+            <li>修改文本框的值为“我在学习”，然后用console打印文本框的值</li>
+            <li>把图片的路径改成：“../public/img/img-2.png”</li>
+            <li>给小花的li加一个叫on的类</li>
+            <li>如果哪个li元素包含on这个类，那么背景颜色修改为紫色</li>
+            <li>在小红后边加一个“&lt;li&gt;小白&lt;/li&gt;” </li>
+            <li>在小明前面加一个“&lt;li&gt;小清&lt;/li&gt;” </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

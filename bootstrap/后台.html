@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--引入bootstrap样式-->
+<link rel="stylesheet" href="css/bootstrap.css">
+<style>
+.header{
+
+    background-color: #c9e2b3
+}
+.nav{
+    height: 100vh;
+    background-color: #00aaee
+}
+</style>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row">
+    	<div class="col-lg-12 header">头部</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 nav">左侧菜单</div>
+        <div class="col-lg-10 main">
+            <table class="table">
+                <caption>Optional table caption.</caption>
+                <thead>
+                <tr>
+                    <th>全选：<input type="checkbox" name="" id="sel-all"></th>
+                    <th>ID</th>
+                    <th>文章标题</th>
+                    <th>作者</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody id="content">
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/template" id="tmpl">
+<% for(var k in data){ %>
+<tr>
+    <td><input type="checkbox" class="checkbox"></td>
+    <td><%=data[k].id%></td>
+    <td><%=data[k].name%></td>
+    <td><%=data[k].author%></td>
+    <td>
+        <button type="button" class="btn btn-primary btn-change" data-toggle="modal" data-target="#myModal">修改</button>
+        <button type="button" class="btn btn-success btn-del" data-toggle="modal" data-target=".bs-example-modal-sm">删除</button>
+    </td>
+</tr>
+<% } %>
+</script>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            ...
+        </div>
+    </div>
+</div>
+
+</body>
+<!--bootstrap是依赖于jquery的-->
+<script src="js/jquery-1.11.1.js"></script>
+<!--模板引擎-->
+<script src="js/ejs.min.js"></script>
+<!--引入bootstrap js-->
+<script src="js/bootstrap.js"></script>
+<script>
+    $.get('json/list.json', function (data) {
+        var tmpl = $('#tmpl').html();
+        var html = ejs.render(tmpl, {data:data});
+        $('#content').html(html);
+    });
+
+</script>
+</html>
