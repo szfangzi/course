@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .menu{
+        padding: 10px;
+        border: 1px solid #ccc;
+        height: 20px;
+      }
+      .menu .item{
+        float: left;
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+        position: relative;
+        text-align: center;
+      }
+      .menu .sub-item{
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 100px;
+        border: 1px solid #ddd;
+        display: none;
+      }
+      .menu .item:hover .sub-item{
+        display: block;
+      }
+      .menu .sub-item a{
+        float: left;
+        width: 100px;
+        display: block;
+        text-align: center;
+        background-color: white;
+      }
+      .menu .sub-item a:hover{
+        background-color: #0000FF;
+        color: white;
+      }
+    </style>
+</head>
+<body>
+
+<div class="menu">
+  <div class="item">
+    数码产品
+    <div class="sub-item">
+      <a href="javascript:;">手机</a>
+      <a href="javascript:;">相机</a>
+      <a href="javascript:;">摄像机</a>
+    </div>
+  </div>
+  <div class="item">
+    电器
+    <div class="sub-item">
+      <a href="javascript:;">电视机</a>
+      <a href="javascript:;">空调</a>
+      <a href="javascript:;">洗衣机</a>
+    </div>
+  </div>
+
+</div>
+
+
+<script>
+
+</script>
+
+</body>
+</html>

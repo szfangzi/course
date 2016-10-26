@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+<div id="container" style="width: 100%;height:600px;"></div>
+
+<script src="../../public/js/jquery-1.11.1.js"></script>
+<script src="../../public/js/plugin/echarts.min.js"></script>
+<script type="text/javascript">
+
+//  通过拿到 ../../public/json/echart.json的数据初始化这个图表
+
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var option = {
+        title: {
+//            标题文本
+            text: '堆叠区域图'
+        },
+        tooltip : {
+//            通过坐标显示提示信息
+            trigger: ''
+        },
+        legend: {
+//            图表头标识  每个数据名字要与图表数据相应的name一样
+            data:[]
+        },
+        grid: {
+//            表格距离左边 右边 下边 上边的空白
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true //这个不用管,加上即可
+        },
+        xAxis : [
+            {
+                type : 'category',
+//                图表X轴左右留白
+                boundaryGap : false,
+//                X轴值
+                data : ['周一','周二','周三','周四','周五','周六','周日']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+//        图表数据数组
+        series : [
+
+        ]
+    };
+
+    myChart.setOption(option);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      body{
+        background-color: #eee;
+      }
+      .popup{
+        position: fixed;
+        top: 100px;
+        left: 100px;
+        width: 300px;
+        height: 200px;
+        background-color: white;
+        border: 1px solid #ddd;
+        /*边框变圆弧，20px为半径*/
+        border-radius: 20px;
+        /*参数1： 必需。水平阴影的位置。允许负值。*/
+        /*参数2：必需。垂直阴影的位置。允许负值。*/
+        /*参数3：	可选。模糊的距离。*/
+        /*参数4：	可选。阴影的颜色。*/
+        box-shadow:10px 10px 30px #111;
+      }
+      .popup h3{
+        float: left;
+        width: 100%;
+        padding:0 10px;
+        box-sizing: border-box;
+        position: relative;
+      }
+      .popup h3 .close{
+        position: absolute;
+        top: -3px;
+        right: 10px;
+      }
+    </style>
+</head>
+<body>
+
+<div class="popup">
+  <h3>标题 <a href="javascript:;" class="close">x</a></h3>
+</div>
+
+
+<script>
+
+</script>
+
+</body>
+</html>
