@@ -15,6 +15,7 @@
 <script type="text/javascript" src="../../public/js/ejs.min.js"></script>
 <script>
     var obj = {name:"小明"};
+
     var tmpl = $('#tmpl').html();
     var html = ejs.render(tmpl, {data:obj});
     $('#name-box').html(html);
