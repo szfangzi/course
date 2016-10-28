@@ -14,6 +14,37 @@
 
 //  通过拿到 ../../public/json/echart.json的数据初始化这个图表
 
+$.get('../../public/json/echart.json', function(data){
+
+  var chartTitle = [];
+  var chartData = [];
+
+  for (var i = 0; i < data.length; i++) {
+    chartTitle.push(data[i].name);
+  }
+  uni(chartTitle);
+  for (var i = 0; i < chartTitle.length; i++) {
+    chartData.push({
+      name: chartTitle[i],
+      type: 'line',
+      stack: '总量',
+      areaStyle: {normal: {}},
+      data: []
+    });
+    data.sort(function(a,b){
+      if(a.day> b.day)return 1;
+      return -1
+    });
+    for (var j = 0; j < data.length; j++) {
+      if (chartTitle[i] == data[j].name){
+        chartData[i].data.push(data[j].data);
+      }
+    }
+
+  }
+
+  console.log(chartTitle);
+
     var dom = document.getElementById("container");
     var myChart = echarts.init(dom);
     var option = {
@@ -27,7 +58,7 @@
         },
         legend: {
 //            图表头标识  每个数据名字要与图表数据相应的name一样
-            data:[]
+            data:chartTitle
         },
         grid: {
 //            表格距离左边 右边 下边 上边的空白
@@ -51,13 +82,24 @@
             }
         ],
 //        图表数据数组
-        series : [
-
-        ]
+        series :chartData
     };
 
     myChart.setOption(option);
 
+});
+
+function uni(arr) {
+  for(var i=0; i<=arr.length-2; i++){
+    for(var j=i+1; j<=arr.length-1; j++){
+      if(arr[i] === arr[j]) {
+        arr.splice(j,1);
+        j--;
+      }
+
+    }
+  }
+}
 </script>
 </body>
 </html>

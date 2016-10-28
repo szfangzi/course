@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+</head>
+<body>
+
+<script>
+  //    作用域链-词法环境决定x的值
+  // 1.
+  function b() {
+    console.log(x);
+  }
+  function a() {
+    var x = 2;
+    b();
+
+  }
+  var x = 1;
+  a();
+  //打印1
+
+
+
+  //2.
+  function a() {
+    var x = 2;
+    b();
+    function b() {
+      console.log(x);
+    }
+  }
+  var x = 1;
+  a();
+  //    打印2
+</script>
+
+</body>
+</html>
