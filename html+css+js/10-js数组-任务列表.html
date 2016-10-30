@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+</head>
+<body>
+
+<h1>任务列表</h1>
+<ul>
+  <li>以下双引号的都是指令，用prompt来输入指令，如果不退出app，完成指令后prompt将会再次出现</li>
+  <li>“new”：添加一个任务(任务不能为空)</li>
+  <li>“list”：打印任务列表</li>
+  <li>“del”：删除一个任务(通过输入任务名称)</li>
+  <li>“q”：退出任务列表app</li>
+</ul>
+
+
+<script>
+  var str = "";
+  var list = [];
+  while (str != 'q') {
+    str = prompt('请输入指令：');
+    if (str == 'list') {
+      console.log(list);
+    } else if (str == 'new') {
+      do {
+        var todo = prompt('请输入一个任务：');
+        if (todo == '') {
+          alert('任务不能为空');
+        } else {
+          list.push(todo);
+        }
+      } while (todo == '');
+
+    }else if(str =='del'){
+      var del = prompt('请输入你要删除的任务：');
+      var index = list.indexOf(del);
+      if(index >= 0){
+        list.splice(index, 1);
+      }else{
+        alert('这个列表不存在你输入的任务，无法删除！');
+      }
+    }
+
+  }
+
+</script>
+
+</body>
+</html>
