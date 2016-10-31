@@ -6,33 +6,27 @@
 </head>
 <body>
 
+<div>div 1</div>
+<div class="highlight">div 2</div>
+<div id="third">div 3</div>
+<div class="highlight">div 4<span> span</span></div>
+
 <script>
-//  练习1 以下对象赋值，哪些是有错误的？
-  var obj = {};
-//  obj._name = '小红';
-//  obj.age = 5;
-  var prop = 'color';
-//  obj[prop] = '红色';
-//  obj.123 = 123;
-
-//练习2 如何取到小明这个值
-var list = {
-  total:4,
-  data:[
-    {name:'小红'},
-    {name:'小明'},
-    {name:'小王'}
-  ]
-}
-
-//练习3 这个this打印的结果是？
-var c = {
-  a:{
-    b: function () {
-      console.log(this);
+//  挑战题1 实现链式调用
+  var util = {
+    show:function(){
+      console.log('show');
+    },
+    log: function(){
+      console.log('log');
     }
   }
-}
+//  util.show().log();最终要能这么调用
+
+//  练习2
+//查找所有的div标签，并且背景颜色改为紫色
+//查找类名为highlight的元素，并且宽度改为200px
+//查找id为third的元素，并且给它一个橙色的边框
 
 </script>
 

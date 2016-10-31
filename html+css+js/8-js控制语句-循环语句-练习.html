@@ -16,6 +16,23 @@
 
 //挑战题1
 // 用while 完善 猜数字的游戏, 猜错会继续弹出输入框
+var num = 99;
+var str = prompt('猜猜这个神秘数字是多少？');
+for (var i = 0;;) {
+  if(str!=null && str > num){
+    alert('太大了');
+    str = prompt('猜猜这个神秘数字是多少？');
+  }else if(str!=null && str < num){
+    alert('太小了');
+    str = prompt('猜猜这个神秘数字是多少？');
+  }else if(str == num){
+    alert('猜对了！');
+    break;
+  }else{
+    break;
+  }
+
+}
 
 
 //  练习3
@@ -23,6 +40,11 @@
 
 //  练习4
 //  用for和"*" 打印出一个直角三角形
+tran(10,false);
+function tran(行数，true正三角false倒三角) {
+
+}
+
 
 </script>
 

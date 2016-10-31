@@ -17,41 +17,25 @@
 <body>
 <div class="ppt">
   <div class="section">
-    <div class="slide">
-      <h3>DOM</h3>
-      <p>
-        Document Object Model
-      </p>
-      <p>
-        DOM就是html+css与js之间的接口
-      </p>
-    </div>
-    <div class="slide">
-      <h3>DOM原理</h3>
-      <p><img src="../public/img/dom.PNG"></p>
-    </div>
+    <h3>DOM进阶</h3>
   </div>
   <div class="section">
     <h3>学习目标</h3>
     <ul class="green">
-      <li>DOM的用法</li>
-      <li>选择器</li>
-      <li>一些常用的选择器方法</li>
-      <li>类的操作</li>
-      <li>内容的操作</li>
-      <li>属性的操作</li>
-      <li>文档插入</li>
+      <li>事件</li>
+
     </ul>
   </div>
   <div class="section">
     <div class="slide">
-      <h3>DOM的用法</h3>
-      <p>
-        选择元素，对元素进行操作
-      </p>
-      <p>
-        document.querySelector('#box').style.width = "600px"
-      </p>
+      <h3>事件</h3>
+      <ul>
+        <li>事件类型</li>
+        <li>click</li>
+        <li>focus</li>
+        <li>load</li>
+        <li>要绑定的元素.addEventListener(事件类型，回调函数)</li>
+      </ul>
     </div>
     <div class="slide">
       <h3>选择器</h3>
@@ -65,10 +49,10 @@
         <li>document.URL</li>
         <li>document.head</li>
         <li>document.body</li>
-        <li>getElementById(ID) (兼容IE6)</li>
-        <li>getElementsByTagName(标签名字) (兼容IE6)</li>
-        <li>document.querySelector(选择器)  (只支持IE8或者以上，支持链式调用)</li>
-        <li>document.querySelectorAll(选择器)  (只支持IE8或者以上，支持链式调用)</li>
+        <li>getElementById() (兼容IE6)</li>
+        <li>getElementsByTagName() (兼容IE6)</li>
+        <li>document.querySelector()  (只支持IE8或者以上，支持链式调用)</li>
+        <li>document.querySelectorAll()  (只支持IE8或者以上，支持链式调用)</li>
       </ul>
     </div>
     <div class="slide">
@@ -81,9 +65,9 @@
       <h3>类的操作</h3>
       <ul>
         <li>classList</li>
-        <li>add(类名)</li>
-        <li>remove(类名)</li>
-        <li>toggle(类名)</li>
+        <li>add</li>
+        <li>remove</li>
+        <li>toggle</li>
       </ul>
     </div>
     <div class="slide">
@@ -97,18 +81,9 @@
     <div class="slide">
       <h3>属性的操作</h3>
       <ul>
-        <li>getAttritube(属性名)</li>
-        <li>setAttritube(属性名，属性值)</li>
+        <li>getAttritube</li>
+        <li>setAttritube</li>
         <li>经典例子：换图片</li>
-      </ul>
-    </div>
-    <div class="slide">
-      <h3>文档插入</h3>
-      <ul>
-        <li>父节点.insertBefore(所添加的新节点，已知子节点)</li>
-        <li>父节点.appendChild(所添加的新节点)</li>
-        <li>父节点.replaceChild(要插入的新节点，要被替换的老节点)</li>
-        <li>父节点.removeChild(要删除的节点)</li>
       </ul>
     </div>
 
