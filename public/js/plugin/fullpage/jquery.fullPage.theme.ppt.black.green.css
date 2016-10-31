@@ -6,3 +6,4 @@
 .ppt .section ul{display: inline-block;text-align: left;font-size: 25px}
 .ppt .section li{}
 .ppt .green{color: #4E8938;}
+.ppt .section *:not(.slide):nth-child(2), .ppt .slide *:nth-child(2){color: #4E8938;}

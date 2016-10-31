@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+</head>
+<body>
+
+<script>
+//  练习1 以下对象赋值，哪些是有错误的？
+  var obj = {};
+//  obj._name = '小红';
+//  obj.age = 5;
+  var prop = 'color';
+//  obj[prop] = '红色';
+//  obj.123 = 123;
+
+//练习2 如何取到小明这个值
+var list = {
+  total:4,
+  data:[
+    {name:'小红'},
+    {name:'小明'},
+    {name:'小王'}
+  ]
+}
+
+//练习3 这个this打印的结果是？
+var c = {
+  a:{
+    b: function () {
+      console.log(this);
+    }
+  }
+}
+
+</script>
+
+</body>
+</html>

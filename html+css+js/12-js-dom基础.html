@@ -18,60 +18,59 @@
 <div class="ppt">
   <div class="section">
     <div class="slide">
-      <h3>js对象</h3>
-      <ul>
-        <li>跟数组一样也是一个容器，里面可以装很多变量或者数据</li>
-        <li>那为什么有了数组还需要对象呢？</li>
-      </ul>
+      <h3>DOM</h3>
+      <p>
+        Document Object Model
+      </p>
+      <p>
+        DOM就是html+css与js之间的接口
+      </p>
     </div>
     <div class="slide">
-      <h3>为什么有了数组还需要对象呢？</h3>
-      <p class="green">
-        11-js对象-为什么有了数组还需要对象.html
-      </p>
+      <h3>DOM原理</h3>
+      <p><img src="../public/img/dom.PNG"></p>
     </div>
   </div>
   <div class="section">
     <h3>学习目标</h3>
     <ul class="green">
-      <li>对象声明、存取值</li>
-      <li>数组里面放对象，对象里面放数组</li>
-      <li>对象里面放函数</li>
+      <li>DOM的用法</li>
+      <li>选择器</li>
+      <li>一些常用的选择器方法</li>
     </ul>
   </div>
   <div class="section">
-    <h3>对象声明、存取值</h3>
-    <p class="green">
-      我们来演示下吧
-    </p>
-  </div>
-  <div class="section">
     <div class="slide">
-      <h3>数组里面放对象，对象里面放数组</h3>
-      <p class="green">
-        我们来演示下吧
+      <h3>DOM的用法</h3>
+      <p>
+        选择元素，对元素进行操作
+      </p>
+      <p>
+        document.querySelector('#box').style.width = "600px"
       </p>
     </div>
     <div class="slide">
-      <h3>练习1-2</h3>
-      <p class="green">
-        11-js对象-练习.html
+      <h3>选择器</h3>
+      <p>
+        跟css的选择器是一样的，我们来演示下吧
       </p>
     </div>
-  </div>
-  <div class="section">
     <div class="slide">
-      <h3>对象里面放函数</h3>
-      <ul class="green">
-        <li>对象里面放函数</li>
-        <li>命名空间</li>
-        <li>this</li>
+      <h3>一些常用的选择器方法</h3>
+      <ul>
+        <li>document.URL</li>
+        <li>document.head</li>
+        <li>document.body</li>
+        <li>getElementById() (兼容IE6)</li>
+        <li>getElementsByTagName() (兼容IE6)</li>
+        <li>document.querySelector()  (只支持IE8或者以上，支持链式调用)</li>
+        <li>document.querySelectorAll()  (只支持IE8或者以上，支持链式调用)</li>
       </ul>
     </div>
     <div class="slide">
-      <h3>练习3</h3>
+      <h3>挑战题1</h3>
       <p class="green">
-        11-js对象-练习.html
+        12-js-dom基础-练习.html
       </p>
     </div>
   </div>
