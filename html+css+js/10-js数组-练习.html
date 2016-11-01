@@ -11,7 +11,7 @@
 var nums = [3,1,2,5,4];
 
 //这里打印的是啥？
-console.log(nums[nums.length]);
+//console.log(nums[nums.length]);
 
 //练习2
   var nest = [
@@ -29,14 +29,65 @@ console.log(nest[1][2]);
 //  练习4 写一个函数printReverse()，功能是把一个数组里面的元素按反向顺序新建一个新数组
 
 
-//练习5 写一个函数isUniform()，功能是如果数组里面的元素都相同，就返回true，否则返回false
-
+// 练习5 写一个函数isUniform()，功能是如果数组里面的元素都相同，就返回true，否则返回false
 
 //  练习6 写一个函数max，功能是返回一个数组里面的最大值
 
 
 //挑战题1 写一个函数foreach，功能就是类似forEach，大概的形式是foreach(你的数组，回调函数)
+var arr = [1,2,3,4,5];
+arr.forEach(function(v,i,list){
+  console.log(v,i,list);
+});
+//1 0 [1, 2, 3, 4, 5]
+//2 1 [1, 2, 3, 4, 5]
+//3 2 [1, 2, 3, 4, 5]
+//4 3 [1, 2, 3, 4, 5]
+//5 4 [1, 2, 3, 4, 5]
 
+function foreach(arr, fn){
+
+}
+foreach(arr, function(v,i,list){
+  console.log(v,i,list);
+});
+
+//过滤器
+//function filter(arr, fn) {
+//
+//}
+//var newArr = filter([1,2,3,4,5,6], function(n){
+//    return n%2==0;
+//});
+//console.log(newArr);
+//
+//var obj = {
+//  'a':4,
+//  'b':6
+//};
+//function sum(obj){
+//  for(var k in obj) {
+//    console.log(obj[k]);
+//  }
+//}
+//sum(obj);
+//
+////  柯里化
+//function curry(fn) {
+//  var args = [];
+//  return function callback(){
+//    if(arguments.length == 0){
+//      return fn.apply(this, args);
+//    }
+//    Array.prototype.push.apply(args, arguments);
+//    return callback;
+//  }
+//}
+//var curried = curry(function(a,b,c){
+//  return [a,b,c];
+//});
+//var x = curried(1)(2)(3)();
+//console.log(111111,x);
 
 
 </script>
