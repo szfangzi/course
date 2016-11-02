@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-  <style>
-    .red{color: red;}
-  </style>
 </head>
 <body>
 
@@ -15,24 +12,20 @@
     <li>平板</li>
 </ul>
 
-<!--如果数据lock为1，li的字体设置为红色-->
 <script type="text/template" id="forTmpl">
     <% for(var i=0;i<data.length;i++){ %>
-    <li <% if(data[i].lock == "1"){%>class="red"<%}%> ><%=data[i].name%></li>
+    <li><%=data[i].name%></li>
     <% } %>
 </script>
 
-<script type="text/javascript" src="../../public/js/jquery-1.11.1.js"></script>
-<script type="text/javascript" src="../../public/js/ejs.min.js"></script>
+<script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="../public/js/ejs.min.js"></script>
 <script>
 
-  $.get('../../public/json/list.json', function (data) {
-    var list = data;
+    var list = [{name:"电脑"},{name:"手机"},{name:"平板"}];
     var tmpl = $('#forTmpl').html();
     var html = ejs.render(tmpl, {data:list});
     $('#list').html(html);
-  });
-
 </script>
 
 
