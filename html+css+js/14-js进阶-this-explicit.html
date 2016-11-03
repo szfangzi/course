@@ -11,8 +11,14 @@
 
   var person = {
     name:'ken',
+    name2:'ken2',
     logName: function () {
       console.log(this.name);
+    },
+    logName2: function () {
+      setTimeout(function () {
+        console.log(this.name2);
+      }.bind(newPerson), 1000);
     },
     add: function (a,b,c) {
       var sum = a+b+c;
@@ -20,8 +26,10 @@
     }
 
   };
+
   var newPerson = {
-    name:'new ken'
+    name:'new ken',
+    name2:'new ken2'
   };
 
   person.logName();
@@ -45,6 +53,8 @@
   var calt = person.add.bind(newPerson,1);
   calt(4,5);
 
+//  声明函数直接bind this, 可用于异步回调函数
+  person.logName2();
 
 </script>
 
