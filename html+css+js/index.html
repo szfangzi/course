@@ -3,24 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+  <style>
+    .l{
+
+    }
+    .r{
+
+    }
+  </style>
 </head>
 <body>
 
+<div class="div">
+  <div class="l">1111</div>
+  <div class="r">2222</div>
+</div>
 
 <script>
   var arr = [];
-  function setList(str) {
+
+  setList({name:asdasd, isTick:1}, 1)
+  function setList(str, type) {
     if(localStorage.list==""||localStorage.list==undefined){
       localStorage.list = JSON.stringify([str]);
     }else{
       var arr = JSON.parse(localStorage.list);
-      arr.push(str);
+      if(type == 0){
+        arr.push(str);
+      }else{
+        for (var i = 0; i < arr.length; i++) {
+          if(str.name == arr[i].name){
+            arr[i].isTick = str.isTick;
+            break;
+          }
+        }
+      }
       localStorage.list = JSON.stringify(arr);
     }
 
   }
 
   function getList(type) {
+    $.get()
     if(localStorage.list==""||localStorage.list==undefined) {
       return [];
     }else{
@@ -44,6 +68,12 @@
 
   }
 
+  getList(0, function(data){
+    render(data);
+  });
+  function getList(type, callback) {
+    $.get('url', callback);
+  }
 </script>
 </body>
 </html>

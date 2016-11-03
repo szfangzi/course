@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <link rel="stylesheet" href="../public/js/plugin/fullpage/jquery.fullPage.css">
+  <link rel="stylesheet" href="../public/js/plugin/fullpage/jquery.fullPage.theme.ppt.black.green.css">
+  <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="../public/js/plugin/fullpage/jquery.fullPage.js"></script>
+  <script>
+    $(function () {
+      $('.ppt').fullpage({});
+    });
+  </script>
+</head>
+<body>
+<div class="ppt">
+  <div class="section">
+    <h3>this</h3>
+  </div>
+  <div class="section">
+    <h3>学习目标</h3>
+    <ul class="green">
+      <li>this是什么？</li>
+      <li></li>
+    </ul>
+  </div>
+  <div class="section">
+    <div class="slide">
+      <h3>this是什么？</h3>
+      <p>
+        不同情况下，this可以是不同的东西
+      </p>
+      <ul>
+        <li>global context 全局上下文</li>
+        <li>object(implicit) 隐式绑定</li>
+        <li>object(explicit) 显式绑定</li>
+        <li>new</li>
+      </ul>
+    </div>
+    <div class="slide">
+      <h3>global context</h3>
+      <p>
+        js-进阶-this-global.html
+      </p>
+    </div>
+    <div class="slide">
+      <h3>object</h3>
+      <p>
+        js-进阶-this-object.html
+      </p>
+    </div>
+    <div class="slide">
+      <h3>object</h3>
+      <ul>
+        <li>call</li>
+        <li>apply</li>
+        <li>bind</li>
+      </ul>
+      <p>
+        js-进阶-this-explicit.html
+      </p>
+    </div>
+    <div class="slide">
+      <h3>new</h3>
+      <p>
+        js-进阶-this-new.html
+      </p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

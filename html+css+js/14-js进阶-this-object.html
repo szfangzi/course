@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+</head>
+<body>
+
+
+<script>
+
+  var person = {
+    name:'ken',
+    logName: function () {
+      console.log(this.name);
+    },
+    determineContext: function () {
+      return this === person;
+    },
+    newPerson:{
+      name:'new ken',
+      logName: function () {
+        console.log(this.name);
+      },
+      determineContext: function () {
+        return this === person;
+      }
+    }
+  }
+  person.logName();
+  console.log(person.determineContext());
+
+  person.newPerson.logName();
+  console.log(person.newPerson.determineContext());
+</script>
+
+</body>
+</html>
