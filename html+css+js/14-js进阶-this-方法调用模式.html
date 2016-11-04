@@ -8,30 +8,12 @@
 
 
 <script>
-
-  var person = {
-    name:'ken',
-    logName: function () {
-      console.log(this.name);
-    },
-    determineContext: function () {
-      return this === person;
-    },
-    newPerson:{
-      name:'new ken',
-      logName: function () {
-        console.log(this.name);
-      },
-      determineContext: function () {
-        return this === person;
-      }
-    }
+  function Person(fname, lname) {
+    this.fname = fname;
+    this.lname = lname;
   }
-  person.logName();
-  console.log(person.determineContext());
-
-  person.newPerson.logName();
-  console.log(person.newPerson.determineContext());
+  var ken = new Person('jhon', 'ken');
+  console.log(ken);
 </script>
 
 </body>
