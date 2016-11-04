@@ -8,7 +8,9 @@
 
 
 <script>
-
+  var newPerson = {
+    name:'new ken'
+  };
   var person = {
     name:'ken',
     logName: function () {
@@ -20,28 +22,26 @@
     }
 
   };
-  var newPerson = {
-    name:'new ken'
-  };
+
 
   person.logName();
   person.add(1,2,3);
 
-//  call
+  //  call
   person.logName.call(newPerson);
   person.add.call(newPerson,1,2,3);
 
 
-//  apply
+  //  apply
   person.logName.apply(newPerson);
   person.add.apply(newPerson,[1,2,3]);
 
 
-//  bind
+  //  bind
   var calt = person.add.bind(newPerson,1,2,3);
   calt();
 
-//  bind支持延迟传参
+  //  bind支持延迟传参
   var calt = person.add.bind(newPerson,1);
   calt(4,5);
 

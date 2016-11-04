@@ -2,7 +2,7 @@
 $.fn.modal = function (options) {
     var self = this;
 
-    self.defaults = {
+    var defaults = {
         width:600,
         height:300,
         title:'标题'
@@ -13,7 +13,7 @@ $.fn.modal = function (options) {
     self.$popupTitle = self.find('.popup-title');
 
     self.init = function () {
-        self.options = $.extend({}, self.defaults, options);
+        self.options = $.extend({}, defaults, options);
         self.initStyle();
         self.bindEvent();
         return self;
@@ -32,12 +32,12 @@ $.fn.modal = function (options) {
 
     self.open = function () {
         self.show();
-        self.options.openCallBack();
+        self.options.openCallBack && self.options.openCallBack();
     };
 
     self.close = function () {
         self.hide();
-        self.options.closeCallBack();
+        self.options.closeCallBack && self.options.closeCallBack();
     };
 
     return self.init();

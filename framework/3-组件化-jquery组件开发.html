@@ -105,21 +105,53 @@
   <div class="mask"></div>
 </div>
 <input type="checkbox" id="x" checked>
+
+<div id="tanchuang"></div>
+
 <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
 <script type="text/javascript" src="../public/js/plugin/modal.js"></script>
 <script>
+
+
+//  var options = {
+//    a:1,
+//    c:1
+//  }
+//var default_options = {
+//  a:2,
+//  b:2
+//};
+//
+//  var options = $.extend({},default_options,options);
+//  console.log(options);
+
+//$.fn.tanchuang = function (options) {
+//  console.log(this);
+//};
+//var x = $('#tanchuang').tanchuang({});
 
   //弹窗
   var loginPopup = $('#popup-wrapper').modal({
     width:800,
     height:400,
     openCallBack:function(){
-
+      console.log('弹窗后执行的函数！');
     },
     closeCallBack:function(){
 
     }
   });
+var loginPopup1 = $('#popup-wrapper').modal({
+  width:800,
+  height:400,
+  openCallBack:function(){
+    console.log('弹窗后执行的函数！');
+  },
+  closeCallBack:function(){
+
+  }
+});
+console.log(loginPopup1===loginPopup);
   loginPopup.open();
 </script>
 </body>

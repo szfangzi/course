@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+</head>
+<body>
+
+
+<script>
+
+  console.log(this);
+
+  function whatIsThis() {
+    console.log(this);
+  }
+
+  function variablesInThis() {
+    this.test = 'test';
+  }
+  variablesInThis();
+  console.log(test);
+
+  whatIsThis();
+
+  var obj = {
+    name:'ken',
+    test: function () {
+      var helper = function () {
+        console.log(this);;
+      }
+      helper();
+    }
+  }
+
+  obj.test();
+</script>
+
+</body>
+</html>

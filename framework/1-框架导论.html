@@ -41,8 +41,26 @@
     <p>比“拼接字符串”更适合处理复杂页面内容更新</p>
   </div>
   <div class="section">
-    <h3>组件化系统</h3>
-    <p>演示：3-组件化开发-jquery组件开发</p>
+    <div class="slide">
+      <h3>组件化系统</h3>
+      <p>演示：3-组件化开发-jquery组件开发</p>
+      <ul>
+        <li>$.fn.组件名</li>
+        <li>$.extend</li>
+      </ul>
+    </div>
+    <div class="slide">
+      <h3>组件化系统-组件思路</h3>
+      <ul>
+        <li>通过$.fn.组件名 定义组件</li>
+        <li>var self = this</li>
+        <li>在组件里面定义默认参数</li>
+        <li>定义插件初始化函数</li>
+        <li>定义初始化样式函数和绑定事件函数</li>
+        <li>定义一些其他的函数</li>
+        <li>返回this(self)</li>
+      </ul>
+    </div>
   </div>
   <div class="section">
     <h3>客户端路由</h3>

@@ -30,42 +30,45 @@
     <div class="slide">
       <h3>this是什么？</h3>
       <p>
-        不同情况下，this可以是不同的东西
+        this是函数调用的时候附加的参数，它的值取决于调用的模式，在js中一共有4种调用模式
       </p>
       <ul>
-        <li>global context 全局上下文</li>
-        <li>object(implicit) 隐式绑定</li>
-        <li>object(explicit) 显式绑定</li>
-        <li>new</li>
+        <li>方法调用模式</li>
+        <li>函数调用模式</li>
+        <li>构造器调用模式</li>
+        <li>显式绑定调用模式</li>
       </ul>
     </div>
     <div class="slide">
-      <h3>global context</h3>
+      <h3>方法调用模式</h3>
+      <p>当一个函数被保存为对象的一个属性时，我们称它为该对象的一个方法。当一个方法被调用时，this被绑定到该对象</p>
       <p>
-        js-进阶-this-global.html
+        js-进阶-this-方法调用模式.html
       </p>
     </div>
     <div class="slide">
-      <h3>object</h3>
+      <h3>函数调用模式</h3>
+      <p>当一个函数并非一个对象的属性时，那么它是被当做一个函数来调用的</p>
       <p>
-        js-进阶-this-object.html
+        js-进阶-this-函数调用模式.html
       </p>
     </div>
     <div class="slide">
-      <h3>object</h3>
+      <h3>构造器调用模式</h3>
+      <p>如果一个函数前面带上new来调用，那么背地里将会创建一个连接到该函数的prototype成员的新对象，同时this会被绑定到那个新对象上。</p>
+      <p>
+        js-进阶-this-构造器调用模式.html
+      </p>
+    </div>
+    <div class="slide">
+      <h3>显式绑定调用模式</h3>
       <ul>
         <li>call</li>
         <li>apply</li>
         <li>bind</li>
       </ul>
       <p>
-        js-进阶-this-explicit.html
-      </p>
-    </div>
-    <div class="slide">
-      <h3>new</h3>
-      <p>
-        js-进阶-this-new.html
+        js-进阶-this-显式绑定调用模式.html
       </p>
     </div>
   </div>
