@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <link rel="stylesheet" href="../../public/js/plugin/fullpage/jquery.fullPage.css">
+  <link rel="stylesheet" href="../../public/js/plugin/fullpage/jquery.fullPage.theme.ppt.black.green.css">
+  <script type="text/javascript" src="../../public/js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="../../public/js/plugin/fullpage/jquery.fullPage.js"></script>
+  <script>
+    $(function () {
+      $('.ppt').fullpage({});
+    });
+  </script>
+</head>
+<body>
+<div class="ppt">
+  <div class="section">
+    <div class="slide">
+      <h3>循环指令</h3>
+    </div>
+    <div class="slide">
+      <h3>学习目标</h3>
+      <ul>
+        <li>v-if v-else</li>
+        <li>template v-if</li>
+        <li>v-show v-else</li>
+      </ul>
+      <p>直接看 6-Vue-条件指令-演示.html</p>
+    </div>
+    <div class="slide">
+      <h3>v-if vs v-show</h3>
+      <ul>
+        <li>v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——在条件第一次变为真时才开始局部编译（编译会被缓存起来）。</li>
+        <li>相比之下，v-show 简单得多——元素始终被编译并保留，只是简单地基于 CSS 切换。</li>
+        <li>一般来说，v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换 v-show 较好，如果在运行时条件不大可能改变 v-if 较好。</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

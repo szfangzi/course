@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--vue模板-->
+<div id="app">
+  <!--v-if v-else-->
+  <h1 v-if="ok">Yes</h1>
+  <h1 v-else>No</h1>
+  <!--template v-if-->
+  <template v-if="ok">
+    <h1>Title</h1>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+  </template>
+  <template v-else>
+    <h1>Title222</h1>
+  </template>
+  <!--v-show 的元素会始终渲染并保持在 DOM 中。v-show 是简单的切换元素的 CSS 属性 display。-->
+  <!--注意 v-show支持v-else 但不支持 <template> 语法。-->
+  <h1 v-show="ok">Hello!</h1>
+  <div v-else>Not sorry</div>
+</div>
+<script src="../../public/js/framework/vue.js"></script>
+
+<script>
+//  模板渲染
+var vm1 = new Vue({
+  el: '#app',
+  data: {
+    ok:false
+  }
+});
+
+
+</script>
+</body>
+</html>

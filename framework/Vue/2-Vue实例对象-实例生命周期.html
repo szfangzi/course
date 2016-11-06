@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--vue模板-->
+<div id="app">
+{{a}}<br/>{{b}}
+</div>
+<script src="../../public/js/framework/vue.js"></script>
+
+<script>
+//  模板渲染
+
+var vm = new Vue({
+  el:'#app',
+  data: {
+    a: 1
+  },
+//  created 钩子在实例创建后调用
+  created: function () {
+    // `this` 指向 vm 实例
+    console.log('created 钩子在实例创建后调用，a is: ' + this.a)
+  }
+})
+// -&gt; "a is: 1"
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--vue模板-->
+<div id="app">
+  <!--普通插值-->
+  <span id="span-{{a}}">文本插值: {{ msg }}</span><br>
+  <span class="span-{{b}}">不会自动更新的文本插值: {{* msg }}</span><br>
+  <span>html插值: {{{ msg }}}</span><br>
+  <!--表达式插值-->
+  <ul>
+    <li>{{ number + 1 }}</li>
+    <li>{{ ok ? 'YES' : 'NO' }}</li>
+    <li>{{ msg.split('').reverse().join('') }}</li>
+  </ul>
+  <!--过滤器 内置的字符串转大写方法-->
+  <p>{{ msg | uppercase }}</p>
+</div>
+<script src="../../public/js/framework/vue.js"></script>
+
+<script>
+//  模板渲染
+var data = { msg: 'asd', a:'999', b:'cls',number:555,ok:false }
+
+var vm = new Vue({
+  el:"#app",
+  data: data
+});
+//数据绑定最基础的形式是文本插值
+//<span>Message: {{ msg }}</span>
+//标签会被相应数据对象的 msg 属性的值替换。每当这个属性变化时它也会更新。
+
+//你也可以只处理单次插值，今后的数据变化就不会再引起插值更新了：
+//<span>This will never change: {{* msg }}</span>
+vm.msg = '<span>span</span>';
+
+
+
+</script>
+</body>
+</html>

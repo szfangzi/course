@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--vue模板-->
+<div id="app">
+  <p v-if="isTick">Hello!</p>
+  <ul>
+    <li v-for="item in list">{{item}} <button v-on:click="del($index)">x</button> </li>
+  </ul>
+
+</div>
+<script src="../../public/js/framework/vue.js"></script>
+
+<script>
+//  模板渲染
+var data = {
+  list:[1,2,3,4],
+  isTick:true
+}
+
+var vm = new Vue({
+  el:"#app",
+  data: data,
+  methods:{
+    del: function (index) {
+      this.list.splice(index, 1);
+    }
+  }
+});
+
+
+
+
+</script>
+</body>
+</html>

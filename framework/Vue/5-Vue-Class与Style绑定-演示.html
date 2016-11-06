@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--vue模板-->
+<div id="app1">
+  <div class="static" v-bind:class="{ 'class-a': isA, 'class-b': isB }">绑定html class 对象语法</div>
+  <div v-bind:class="classObject">绑定html class 对象语法 2</div>
+  <div v-bind:class="[classA, classB]">绑定html class 数组语法</div>
+  <div v-bind:class="[classA, isB ? classB : '']">绑定html class 数组语法 2</div>
+</div>
+<div id="app2">
+  <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">绑定内联样式 对象语法</div>
+  <div v-bind:style="styleObject">绑定内联样式 对象语法 2</div>
+  <div v-bind:style="[styleObjectA, styleObjectB]">绑定内联样式 数组语法</div>
+</div>
+<script src="../../public/js/framework/vue.js"></script>
+
+<script>
+//  模板渲染
+var vm1 = new Vue({
+  el: '#app1',
+  data: {
+    isA: false,
+    isB: true,
+    classObject: {
+      'class-a': true,
+      'class-b': false
+    },
+    classA: {
+      'class-a': true,
+      'class-b': false
+    },
+    classB:{
+      'class-c': true,
+      'class-d': false
+    }
+  }
+});
+var vm2 = new Vue({
+  el: '#app2',
+  data: {
+    activeColor: 'red',
+    fontSize: 30,
+    styleObject: {
+      color: 'red',
+      fontSize: '13px'
+    },
+    styleObjectA: {
+      color: 'blue',
+      backgroundColor:'pink'
+    },
+    styleObjectB: {
+      fontSize: '13px'
+    }
+  }
+});
+
+</script>
+</body>
+</html>

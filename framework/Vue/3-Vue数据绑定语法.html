@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <link rel="stylesheet" href="../../public/js/plugin/fullpage/jquery.fullPage.css">
+  <link rel="stylesheet" href="../../public/js/plugin/fullpage/jquery.fullPage.theme.ppt.black.green.css">
+  <script type="text/javascript" src="../../public/js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="../../public/js/plugin/fullpage/jquery.fullPage.js"></script>
+  <script>
+    $(function () {
+      $('.ppt').fullpage({});
+    });
+  </script>
+</head>
+<body>
+<div class="ppt">
+  <div class="section">
+    <div class="slide">
+      <h3>数据绑定语法</h3>
+      <p>通俗的说就是写模板</p>
+    </div>
+    <div class="slide">
+      <h3>学习目标</h3>
+      <ul>
+        <li>插值</li>
+        <li>指令</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section">
+    <div class="slide">
+      <h3>插值</h3>
+      <ul>
+        <li>文本插值</li>
+        <li>不自动更新的文本插值</li>
+        <li>html插值</li>
+        <li>表达式插值</li>
+        <li>过滤器</li>
+      </ul>
+    </div>
+    <div class="slide">
+      <h3>过滤器</h3>
+      <p>{{ message | capitalize }} 这里我们将表达式 message 的值“管输（pipe）”到内置的 capitalize 过滤器，这个过滤器其实只是一个 JavaScript 函数，返回大写化的值。Vue.js 提供数个内置过滤器，在后面我们会谈到如何开发自己的过滤器。</p>
+      <p>管输连用 {{ message | filterA | filterB }}</p>
+      </ul>
+    </div>
+  </div>
+  <div class="section">
+    <div class="slide">
+      <h3>指令</h3>
+      <ul>
+        <li>v-if</li>
+        <li>v-for</li>
+        <li>v-on</li>
+        <li>更多的以后再讲</li>
+      </ul>
+    </div>
+  </div>
+
+
+</div>
+</body>
+</html>
