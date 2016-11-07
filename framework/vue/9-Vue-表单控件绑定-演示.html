@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--vue模板-->
+<div id="app">
+  <!--基础用法-->
+  <div>
+    <span>文本控件绑定: {{ message }}</span>
+    <br>
+    <input type="text" v-model="message" placeholder="文本控件绑定">
+  </div>
+  <div>
+    <input type="checkbox" id="checkbox" v-model="checked">
+    <label for="checkbox">单个复选框：{{ checked }}</label>
+  </div>
+  <div>
+    多个复选框：
+    <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+    <label for="jack">Jack</label>
+    <input type="checkbox" id="john" value="John" v-model="checkedNames">
+    <label for="john">John</label>
+    <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+    <label for="mike">Mike</label>
+    <br>
+    <!--json过滤器会把json字符串转换成js数组-->
+    <span>Checked names: {{ checkedNames | json }}</span>
+  </div>
+  <div>
+    多个单选框：
+    <input type="radio" id="one" value="One" v-model="picked">
+    <label for="one">One</label>
+    <input type="radio" id="two" value="Two" v-model="picked">
+    <label for="two">Two</label>
+    <br>
+    <span>Picked: {{ picked }}</span>
+  </div>
+  <div>
+    下拉选项(单选)：
+    <select v-model="selected">
+      <option selected>A</option>
+      <option>B</option>
+      <option>C</option>
+    </select>
+    <span>Selected: {{ selected }}</span>
+  </div>
+  <div>
+    多选（绑定到一个数组）：
+    <select v-model="selected2" multiple>
+      <option selected>A</option>
+      <option>B</option>
+      <option>C</option>
+    </select>
+    <br>
+    <span>Selected: {{ selected2 | json }}</span>
+  </div>
+  <div>
+    动态选项：
+    <select v-model="selected3">
+      <option v-for="option in options" v-bind:value="option.value">
+        {{ option.text }}
+      </option>
+    </select>
+    <span>Selected: {{ selected3 }}</span>
+  </div>
+
+</div>
+
+<br><br><br><br>
+
+<div id="app2">
+  <!--值绑定-->
+  <div>
+    <input type="checkbox" v-model="toggle" v-bind:true-value="a" v-bind:false-value="b">
+    复选框值绑定:{{toggle}}
+  </div>
+  <div>
+    <input type="radio" v-model="picked" v-bind:value="a">
+    单选框值绑定:{{picked}}
+  </div>
+  <div>
+    <select v-model="selected">
+      <!-- 对象字面量 -->
+      <option v-bind:value="{ number: 123 }">123</option>
+      <option v-bind:value="{ number: 234 }">234</option>
+    </select>
+    下拉框值绑定：{{selected.number}}
+  </div>
+
+  <br><br>
+  <div>
+    <!--在默认情况下，v-model 在input 事件中同步输入框值与数据，可以添加一个特性 lazy，从而改到在 change 事件中同步-->
+    惰性数据更新<input v-model="msg" lazy>
+    msg：{{msg}}
+  </div>
+  <div>
+    <!--debounce 设置一个最小的延时，在每次敲击之后延时同步输入框的值与数据。如果每次更新都要进行高耗操作（例如在输入提示中 Ajax 请求），它较为有用。-->
+    延迟数据更新：<input v-model="msg1" debounce="500">
+    msg1：{{msg1}}
+  </div>
+
+
+</div>
+
+<script src="../../public/js/framework/vue.js"></script>
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      message:"",
+      checked:true,
+      checkedNames:[],
+      picked:"Two",
+      selected:"",
+      selected2:"",
+      selected3:"",
+      options: [
+        { text: 'One', value: 'A' },
+        { text: 'Two', value: 'B' },
+        { text: 'Three', value: 'C' }
+      ]
+
+    },
+    // 在 `methods` 对象中定义方法
+    methods: {
+
+    }
+  });
+
+  var vm2 = new Vue({
+    el: '#app2',
+    data: {
+      toggle:"",
+      a:11,
+      b:22,
+      picked:"",
+      selected:"",
+      msg:"",
+      msg1:"",
+      age:1
+
+    },
+    // 在 `methods` 对象中定义方法
+    methods: {
+
+    }
+  });
+
+</script>
+</body>
+</html>

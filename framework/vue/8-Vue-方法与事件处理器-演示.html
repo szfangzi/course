@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--vue模板-->
+<div id="example">
+  <!--方法处理器-->
+  <button v-on:click="greet">Greet</button>
+
+  <!--内联语句处理器, 可以直接传参, $event是事件对象-->
+  <button v-on:click="say('hi',$event)">Say Hi</button>
+
+  <!--事件修饰符-->
+  <a href="javascript:;" v-on:click.stop="say">阻止冒泡了</a>
+  <a href="http://www.baidu.com" v-on:click.prevent="say">阻止默认事件了</a>
+  <a href="http://www.baidu.com" v-on:click.stop.prevent="say">事件修饰符连用</a>
+
+  <!--按键修饰符-->
+  <!-- 只有在 keyCode 是 13 时调用 vm.submit() -->
+  <input v-on:keyup.13="enter">
+  <!-- 敲回车 时调用 vm.submit() -->
+  <input v-on:keyup.enter="enter">
+  <!-- 敲回车 时调用 vm.submit() -->
+  <input v-on:keyup.esc="esc">
+  <!-- 敲esc 时调用 vm.submit() -->
+  <input v-on:keyup.a="a">
+  <!-- 敲a 时调用 vm.submit() -->
+</div>
+
+
+<script src="../../public/js/framework/vue.js"></script>
+
+<script>
+  var vm = new Vue({
+    el: '#example',
+    data: {
+      name: 'Vue.js'
+    },
+    // 在 `methods` 对象中定义方法
+    methods: {
+      greet: function (event) {
+        // 方法内 `this` 指向 vm
+        alert('Hello ' + this.name + '!')
+        // `event` 是原生 DOM 事件对象
+        alert(event.target.tagName)
+      },
+      say: function (a,e) {
+
+        console.log(a,e);
+
+      },
+      enter: function (event) {
+        console.log('enter',event);
+      },
+      esc: function (event) {
+        console.log('esc',event);
+      },
+      a: function (event) {
+        console.log('a',event);
+      }
+    }
+  });
+
+
+</script>
+</body>
+</html>

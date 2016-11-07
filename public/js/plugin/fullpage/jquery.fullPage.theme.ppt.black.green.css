@@ -3,7 +3,7 @@
 .ppt .section h3 { text-align: center; font: 50px "Microsoft Yahei";font-weight: bold;}
 .ppt .section p, .ppt .section a{ text-align: center; font: 25px "Microsoft Yahei";}
 .ppt .section div{text-align: center;}
-.ppt .section ul{display: inline-block;text-align: left;font-size: 25px}
+.ppt .section ul,.ppt .section ol{display: inline-block;text-align: left;font-size: 25px}
 .ppt .section li{}
 .ppt .green{color: #4E8938;}
-.ppt .section *:not(.slide):not(li):nth-child(2), .ppt .slide *:not(li):nth-child(2){color: #4E8938;}
+.ppt .section *:not(.slide):not(li):nth-child(even), .ppt .slide *:not(li):nth-child(even){color: #4E8938;}
