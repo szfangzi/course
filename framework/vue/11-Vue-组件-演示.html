@@ -9,12 +9,19 @@
 <!--vue模板-->
 <div id="example">
   <my-component></my-component>
+
+  <!--一些 HTML 元素，如 table，限制自定义标签放在里面，这个时候可以用tr标签混上is属性解决这个问题-->
+  <table>
+    <tr is="my-component"></tr>
+  </table>
 </div>
 
 <script src="../../public/js/framework/vue.js"></script>
 
 <script>
 
+//1.怎么编写组件？
+//  只要修改data，即可自动渲染组件
   var data = {
     items:[
       {text:'ken'},
@@ -29,13 +36,13 @@
     }
   });
 
-  // 注册组件，其实就是绑定自定义标签与组件
+  // 注册组件 - 其实就是让自定义标签具备组件的功能
   Vue.component('my-component', MyComponent);
 
   // 创建根实例
   var vm = new Vue({
     el: '#example'
-  })
+  });
 
 </script>
 </body>
