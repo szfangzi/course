@@ -32,13 +32,12 @@ new Vue({
   },
   methods: {
     addTodo: function (event) {
-      if(event.ctrlKey && event.keyCode == 13){
         var text = this.newTodo.trim();
         if (text) {
           this.todos.push({ text: text })
           this.newTodo = ''
         }
-      }
+
 
     },
     removeTodo: function (index) {

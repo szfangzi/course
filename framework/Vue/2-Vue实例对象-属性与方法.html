@@ -8,20 +8,20 @@
 
 <!--vue模板-->
 <div id="app">
-{{a}}<br/>{{b}}
+a:{{a}}<br/>b:{{b}}
 </div>
 <script src="../../public/js/framework/vue.js"></script>
 
 <script>
 //  模板渲染
-var data = { a: 1 }
+var data = { a: 1,b:"",data:111 }
 
 var vm = new Vue({
   el:"#app",
   data: data
 });
 
-console.log(vm.a === data.a); // -&gt; true
+//console.log(vm.a === data.a); // -&gt; true
 //
 //// 设置属性也会影响到原始数据
 //vm.a = 2

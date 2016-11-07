@@ -7,3 +7,4 @@
 .ppt .section li{}
 .ppt .green{color: #4E8938;}
 .ppt .section *:not(.slide):not(li):nth-child(even), .ppt .slide *:not(li):nth-child(even){color: #4E8938;}
+b{color: #ec971f;}

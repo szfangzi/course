@@ -61,7 +61,7 @@
   <div>
     动态选项：
     <select v-model="selected3">
-      <option v-for="option in options" v-bind:value="option.value">
+      <option v-for="option in options" value="{{option.value}}">
         {{ option.text }}
       </option>
     </select>

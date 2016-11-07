@@ -21,25 +21,25 @@ var vm = new Vue({
     c: 2
   },
 //  计算属性
-  computed: {
-    // 一个计算属性的 getter 需要输出b的时候自动回执行这个get函数
-    b: function () {
-//      这里可以写大量的处理
-      // `this` 指向 vm 实例
-      return this.a + 1
-    }
-  },
-//  computed:{
-//    b:{
-//      get: function (){
-//        return this.a + 1
-//      },
-//      // setter 修改b的时候自动执行这个set函数
-//      set: function (newValue) {
-//        this.c = newValue + 10;
-//      }
+//  computed: {
+//    // 一个计算属性的 getter 需要输出b的时候自动回执行这个get函数
+//    b: function () {
+////      这里可以写大量的处理
+//      // `this` 指向 vm 实例
+//      return this.a + 1
 //    }
-//  }
+//  },
+  computed:{
+    b:{
+      get: function (){
+        return this.a + 1
+      },
+      // setter 修改b的时候自动执行这个set函数
+      set: function (newValue) {
+        this.c = newValue + 10;
+      }
+    }
+  }
 });
 //数据更新监听
 //vm.$watch('a', function (val) {
