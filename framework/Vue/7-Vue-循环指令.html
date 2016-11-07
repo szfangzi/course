@@ -23,20 +23,38 @@
     <div class="slide">
       <h3>学习目标</h3>
       <ul>
-        <li>v-if v-else</li>
-        <li>template v-if</li>
-        <li>v-show v-else</li>
-      </ul>
-      <p>直接看 6-Vue-条件指令-演示.html</p>
-    </div>
-    <div class="slide">
-      <h3>v-if vs v-show</h3>
-      <ul>
-        <li>v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——在条件第一次变为真时才开始局部编译（编译会被缓存起来）。</li>
-        <li>相比之下，v-show 简单得多——元素始终被编译并保留，只是简单地基于 CSS 切换。</li>
-        <li>一般来说，v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换 v-show 较好，如果在运行时条件不大可能改变 v-if 较好。</li>
+        <li>v-for</li>
+        <li>$index</li>
+        <li>track-by</li>
+        <li>数组更新的一些漏洞解决方法</li>
       </ul>
     </div>
+  </div>
+  <div class="section">
+    <h3>track-by</h3>
+    <p>有时需要用全新对象（例如通过 API 调用创建的对象）替换数组。因为 v-for 默认通过数据对象的特征来决定对已有作用域和 DOM 元素的复用程度，这可能导致重新渲染整个列表。但是，如果每个对象都有一个唯一 ID 的属性，便可以使用 track-by 特性给 Vue.js 一个提示，Vue.js 因而能尽可能地复用已有实例。</p>
+  </div>
+  <div class="section">
+    <h3>数组更新的一些漏洞解决方法</h3>
+    <p>因为 JavaScript 的限制，Vue.js 不能检测到下面数组变化：</p>
+    <ol>
+      <li>直接用索引设置元素，如 vm.items[0] = {}；</li>
+      <li>修改数据的长度，如 vm.items.length = 0。</li>
+    </ol>
+    <ul>
+      <li>为了解决问题 (1)，Vue.js 扩展了观察数组，为它添加了一个 $set() 方法。</li>
+      <li>至于问题 (2)，只需用一个空数组替换 items。</li>
+    </ul>
+    <p>Vue新增了数组删除的方法：this.items.$remove(item)</p>
+  </div>
+  <div class="section">
+    <h3>显示过滤/排序的结果</h3>
+    <p>有时我们想显示过滤/排序过的数组，同时不实际修改或重置原始数据。有两个办法：</p>
+    <ol>
+      <li>创建一个计算属性，返回过滤/排序过的数组；</li>
+      <li>使用内置的过滤器 filterBy 和 orderBy。</li>
+    </ol>
+    <p>计算属性有更好的控制力，也更灵活，因为它是全功能 JavaScript。但是通常过滤器更方便</p>
   </div>
 
 </div>

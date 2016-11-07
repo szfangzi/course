@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--vue模板-->
+<div id="example">
+  <my-component></my-component>
+</div>
+
+<script src="../../public/js/framework/vue.js"></script>
+
+<script>
+
+  var data = {
+    items:[
+      {text:'ken'},
+      {text:'ann'}
+    ]
+  };
+  // 定义组件
+  var MyComponent = Vue.extend({
+    template: '<div v-for="item in items">{{item.text}}</div>',
+    data:function(){
+      return data;
+    }
+  });
+
+  // 注册组件，其实就是绑定自定义标签与组件
+  Vue.component('my-component', MyComponent);
+
+  // 创建根实例
+  var vm = new Vue({
+    el: '#example'
+  })
+
+</script>
+</body>
+</html>

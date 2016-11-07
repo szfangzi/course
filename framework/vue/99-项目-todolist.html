@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div id="app">
+  <input type="text" v-model="newTodo" v-on:keypress.enter="add">
+  <ul>
+    <!--所有任务-->
+    <li v-for="todo in list" v-if="hash=='#all'||hash==''"><input type="checkbox" v-model="todo.isTick" v-on:click="tick($index)"  > <span>{{todo.text}}</span><button v-on:click="del($index)">x</button></li>
+<!--未完成任务-->
+    <li v-for="todo in list | filterBy unfFilter" v-if="hash=='#unf'"><input type="checkbox" v-model="todo.isTick" v-on:click="tick($index)"  > <span>{{todo.text}}</span><button v-on:click="del($index)">x</button></li>
+<!--已完成任务-->
+    <li v-for="todo in list | filterBy fFilter" v-if="hash=='#f'"><input type="checkbox" v-model="todo.isTick" v-on:click="tick($index)"  > <span>{{todo.text}}</span><button v-on:click="del($index)">x</button></li>
+  </ul>
+  <span>还剩下<b></b>个未完成的任务</span>
+  <a href="#all">所有任务</a>
+  <a href="#unf">未完成的任务</a>
+  <a href="#f">已完成的任务</a>
+  <a href="javascript:;">删除所有已完成的任务</a>
+</div>
+<script src="../../public/js/framework/vue.js"></script>
+<script>
+
+  var store = {
+    setList:function(arr) {
+      if(arr!="" && arr!=undefined){
+        localStorage.list = JSON.stringify(arr);
+      }
+    },
+    getList:function() {
+      if(localStorage.list!="" && localStorage.list!=undefined){
+        return JSON.parse(localStorage.list);
+      }else{
+        return [];
+      }
+    }
+  };
+
+  var vm = new Vue({
+    el:'#app',
+    data:{
+      newTodo:'',
+      list:store.getList(0),
+      hash:location.hash
+    },
+    watch:{
+      'list':{
+//        一旦数组修改，马上保存数据到localstorge
+        handler:function(val,oldVal){
+          store.setList(val);
+        },
+//        深度监听，可以监听对象里面的值变化
+        deep:true
+      }
+    },
+    methods:{
+//      新增任务
+      add: function () {
+        this.list.push({text:this.newTodo,isTick:false});
+        this.newTodo = '';
+      },
+//      删除任务
+      del: function (index) {
+        this.list.$remove(this.list[index]);
+      },
+//      复选框点击
+      tick: function (index) {
+        this.list[index].isTick = !this.list[index].isTick;
+      },
+//      未完成任务过滤器
+      unfFilter:function (val,index){
+        return val.isTick == false;
+      },
+//      已完成任务过滤器
+      fFilter:function (val,index){
+        return val.isTick == true;
+      }
+    }
+  });
+//  路由监听
+  window.onhashchange = function () {
+    vm.hash = location.hash;
+  }
+
+
+</script>
+</body>
+</html>

@@ -4,7 +4,11 @@
 .ppt .section p, .ppt .section a{ text-align: center; font: 25px "Microsoft Yahei";}
 .ppt .section p img + img{margin-left: 5px;}
 .ppt .section div{text-align: center;}
-.ppt .section ul{display: inline-block;text-align: left;font-size: 25px}
+.ppt .section ul,.ppt .section ol{display: inline-block;text-align: left;font-size: 25px}
 .ppt .section li{}
 .ppt .green{color: #4E8938;}
 .ppt .section *:not(.slide):not(li):nth-child(even), .ppt .slide *:not(li):nth-child(even){color: #4E8938;}
+<<<<<<< HEAD
+=======
+b{color: #ec971f;}
+>>>>>>> 2a8570f9a2ac0dcd4ef106d30bb22c7de56f080b
