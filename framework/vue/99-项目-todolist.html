@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+  <script src="../../public/js/framework/vue.js"></script>
 </head>
 <body>
 
@@ -22,7 +23,7 @@
   <a href="#f">已完成的任务</a>
   <a href="javascript:;">删除所有已完成的任务</a>
 </div>
-<script src="../../public/js/framework/vue.js"></script>
+
 <script>
 
   var store = {
@@ -44,7 +45,7 @@
     el:'#app',
     data:{
       newTodo:'',
-      list:store.getList(0),
+      list:store.getList(),
       hash:location.hash
     },
     watch:{
