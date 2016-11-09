@@ -17,18 +17,21 @@
 <script>
 //  模板渲染
   var vm = new Vue({
-//    模板的选择器
+//    模板的选择器，属性名必须是el
     el: '#app',
-//    填充到模板数据
+//    填充到模板的数据，属性名必须是data
     data: {
       message:'Hello Vue.js!',
-      hi:'hi!'
-      }
+      data:{a:1}
+    }
   });
-//  如何拿到data里面的属性值
-console.log(vm.$data);
+//  通过vm实例拿到data里面的属性值
 console.log(vm.message);
-console.log(vm.hi);
+console.log(vm.data);
+//如果要拿到整个data值，需要通过vm.$data，那为什么不是vm.data呢？
+console.log(vm.$data);
+
+// 还记得我们刚才讲的响应的数据绑定吗？ 如果我修改vm.message，会怎么样呢？
 
 </script>
 </body>
