@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <link rel="stylesheet" href="../public/js/plugin/fullpage/jquery.fullPage.css">
+  <link rel="stylesheet" href="../public/js/plugin/fullpage/jquery.fullPage.theme.ppt.black.green.css">
+  <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="../public/js/plugin/fullpage/jquery.fullPage.js"></script>
+  <script>
+    $(function () {
+      $('.ppt').fullpage({});
+    });
+  </script>
+</head>
+<body>
+<div class="ppt">
+  <div class="section">
+    <div class="slide">
+      <h3>现代编程总则 - KISS原则(keep it simple,stupid)</h3>
+      <p>通俗的说：“怎么简单怎么来”，下边先看两个小故事</p>
+    </div>
+    <div class="slide">
+      <h3>第一个故事</h3>
+      <p>有一家日本最大的化妆品公司，收到了用户的投诉。用户抱怨买来的肥皂盒是空的。这家公司为了防止再发生这样的事故，很辛苦地发明了一台X光检查器，能够透视每一个出货的肥皂盒。</p>
+    </div>
+    <div class="slide">
+      <p>同样的事故，发生在一家小公司。他们的解决方法是买一台强力的工业电扇，对着肥皂盒猛吹，被吹走的就是空肥皂盒。 →_→</p>
+    </div>
+    <div class="slide">
+      <h3>第二个故事</h3>
+      <p>美国太空总署（NASA）发现在太空失重状态下，航天员无法用墨水笔写字。于是，他们花了大量经费，研发出了一种可以在失重状态下写字的太空笔。猜猜看，俄国人是怎么解决的？</p>
+    </div>
+    <div class="slide">
+      <p>俄国人用的铅笔 →_→</p>
+    </div>
+    <div class="slide">
+      <h3>现代编程总则 - KISS原则(keep it simple,stupid)</h3>
+      <p>通俗的说：“怎么简单怎么来”，下边有具体细则</p>
+      <ol>
+        <li>清晰原则 - 代码要写得尽量清晰，重视注释。</li>
+        <li>模块原则 - 每个程序只做一件事</li>
+        <li>组合原则 - 不同的程序之间通过接口相连。接口之间用文本格式进行通信。</li>
+        <li>优化原则 - "先求运行，再求正确，最后求快。"（Make it run, then make it right, then make it fast.）</li>
+      </ol>
+    </div>
+  </div>
+  <div class="section">
+    <div class="slide">
+      <h3>代码如何才能清晰？</h3>
+    </div>
+    <div class="slide">
+      <h3>代码如何才能清晰？</h3>
+      <p>代码要写得尽量清晰，重视注释。</p>
+      <ul>
+        <li>各种括号要对齐，层次要分明</li>
+        <li>命名要尽量有意义，让人一看就懂</li>
+        <li>复杂的代码要注释好，能让人一看就知道干嘛的</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section">
+    <div class="slide">
+      <h3>什么叫每个程序只做一件事？</h3>
+    </div>
+    <div class="slide">
+      <h3>什么叫每个程序只做一件事？</h3>
+      <p>比如一个过滤偶数函数，一个数组去重的函数</p>
+    </div>
+    <div class="slide">
+      <h3>那为什么每个程序只做一件事？</h3>
+    </div>
+    <div class="slide">
+      <h3>那为什么每个程序只做一件事？</h3>
+      <p>比如一个过滤偶数函数，一个数组去重的函数，合并起来用的话会导致以下问题</p>
+      <ol>
+        <li>函数太复杂，容易出现漏洞或错误，一旦错误，找错误比单一函数的难找</li>
+        <li>功能单一的函数容易复用，多个功能的函数复用性差</li>
+        <li>业务需求更改，复杂的函数不好修改，一旦修改容易导致别的调用这个函数的地方出错</li>
+      </ol>
+    </div>
+  </div>
+  <div class="section">
+    <div class="slide">
+      <h3>为什么接口之间用文本格式进行通信？</h3>
+    </div>
+    <div class="slide">
+      <h3>为什么接口之间用文本格式进行通信？</h3>
+      <p>对于人类来说，文本格式是最容易处理、最通用的格式。而对于web开发，最流行的文本格式是<b>JSON</b></p>
+      <ul>
+        <li>JSON.parse()</li>
+        <li>JSON.stringify()</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section">
+    <div class="slide">
+      <h3>何为先求运行，再求正确，最后求快?</h3>
+    </div>
+    <div class="slide">
+      <h3>何为先求运行，再求正确，最后求快?</h3>
+      <p>比如实现一个过滤偶数的函数</p>
+      <ol>
+        <li>确保函数能调用，能进到函数里面</li>
+        <li>能正确的过滤偶数</li>
+        <li>通过优化算法，能更快速的运行这个函数</li>
+      </ol>
+    </div>
+    <div class="slide">
+      <h3>为什么先求运行，再求正确，最后求快?</h3>
+      <ol>
+        <li>程序出错，如果你没有检验过这个函数调用是否有问题，那么会加大排错的难度</li>
+        <li>从简单开始，每完善一步，程序都能越来越好，可以给你好心情</li>
+      </ol>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+  <script src="../../public/js/framework/vue.js"></script>
 </head>
 <body>
 
-<!--vue模板-->
+<!--vue模板 v-model双向绑定-->
 <div id="app">
-  {{ message }}
+  <p>{{ message }}</p>
+  <input v-model="message">
 </div>
-<script src="../../public/js/framework/vue.js"></script>
+
+
 
 <script>
 //  模板渲染

@@ -8,9 +8,9 @@
 
 <script>
   function Vue(options) {
-    this.name = name;
+
   }
-  var vm = new Vue({
+  var vm2 = new Vue({
     el:'#app',
     data:{
       d1:1,
@@ -25,7 +25,22 @@
       }
     }
   });
-  console.log(vm);
+  var vm1 = new Vue({
+    el:'#app',
+    data:{
+      d1:10,
+      d2:20
+    },
+    methods:{
+      a: function () {
+        console.log('a');
+      },
+      b: function () {
+        console.log('b');
+      }
+    }
+  });
+  console.log();
 </script>
 </body>
 </html>
