@@ -8,9 +8,9 @@
 
 
 <script>
-  var newPerson = {
-    name:'new ken'
-  };
+//  var newPerson = {
+//    name:'new ken'
+//  };
   var person = {
     name:'ken',
     name2:'ken2',
@@ -29,37 +29,34 @@
 
   };
 
-<<<<<<< HEAD:html+css+js/14-js进阶-this-显式绑定调用模式.html
-=======
   var newPerson = {
     name:'new ken',
     name2:'new ken2'
   };
->>>>>>> 1f5dbb37191b65277b74918fe29ac77099d2082d:html+css+js/14-js进阶-this-explicit.html
 
   person.logName();
   person.add(1,2,3);
 
   //  call
-  person.logName.call(newPerson);
-  person.add.call(newPerson,1,2,3);
+//  person.logName.call(newPerson);
+//  person.add.call(newPerson,1,2,3);
 
-
-  //  apply
-  person.logName.apply(newPerson);
-  person.add.apply(newPerson,[1,2,3]);
-
-
-  //  bind
-  var calt = person.add.bind(newPerson,1,2,3);
-  calt();
-
-  //  bind支持延迟传参
-  var calt = person.add.bind(newPerson,1);
-  calt(4,5);
-
-//  声明函数直接bind this, 可用于异步回调函数
-  person.logName2();
+//
+//  //  apply
+//  person.logName.apply(newPerson);
+//  person.add.apply(newPerson,[1,2,3]);
+//
+//
+//  //  bind
+//  var calt = person.add.bind(newPerson,1,2,3);
+//  calt();
+//
+//  //  bind支持延迟传参
+//  var calt = person.add.bind(newPerson,1);
+//  calt(4,5);
+//
+////  声明函数直接bind this, 可用于异步回调函数
+//  person.logName2();
 
 </script>
 

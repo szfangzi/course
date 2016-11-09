@@ -8,12 +8,17 @@
 
 
 <script>
-  function Person(fname, lname) {
-    this.fname = fname;
-    this.lname = lname;
-  }
-  var ken = new Person('jhon', 'ken');
-  console.log(ken);
+  var obj = {
+    test: function () {
+      console.log(this);
+    },
+    a:{
+      test: function () {
+        console.log(this);
+      }
+    }
+  };
+  console.log(obj);
 </script>
 
 </body>
