@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+  function Vue(options) {
+
+  }
+  var vm = new Vue({
+    el:'#app',
+    data:{
+      d1:1,
+      d2:2
+    },
+    methods:{
+      a: function () {
+        console.log('a');
+      },
+      b: function () {
+        console.log('b');
+      }
+    }
+  });
+  console.log(vm);
+
+  var obj = {};
+  var val = 'ken';
+  obj.name = val;
+  // defineProperty es5(2009年发布的js版本)的一个方法，只支持IE8以上版本，可以声明对象的属性并具备监听数据变化的功能，数据一旦变化会自动调用set这个回调函数
+  Object.defineProperty(obj, 'name', {
+    get: function () {
+      return val
+    },
+    set: function (newVal) {
+      console.log('监听到你更新数据了！'+newVal);
+      val = newVal;
+    }
+  });
+  obj.name = 'ann';
+</script>
+</body>
+</html>

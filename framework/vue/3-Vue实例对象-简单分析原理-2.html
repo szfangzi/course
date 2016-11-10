@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+  <meta charset="UTF-8">
+  <title></title>
 </head>
 <body>
 
@@ -19,15 +19,15 @@
     }
 //    通过new出来的对象，构造函数会自动 return this
   }
-  var data = {a:1,b:{c:2}};
+  var data = {a: 1, b: {c: 2}};
   var vm = new Vue({
-    el:'#app',
-    data:{
-      d1:1,
-      d2:2,
-      data:data
+    el: '#app',
+    data: {
+      d1: 1,
+      d2: 2,
+      data: data
     },
-    methods:{
+    methods: {
       a: function () {
         console.log('a');
       },
@@ -36,6 +36,7 @@
       }
     }
   });
+
   console.log(vm);
 </script>
 </body>
