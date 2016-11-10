@@ -9,9 +9,14 @@
 <script src="../../public/js/framework/vue.js"></script>
 
 <script>
-
+//  通过localStorage可以把数据永久存储在硬盘的某个文件里，总共能存5m
+//存值
   localStorage.setItem('name', 'ken');
+//取值
   localStorage.getItem('name');
+//删除值
+localStorage.removeItem('name');
+//清除localStorage的所有值
   localStorage.clear();
 
   //  如何存取数组与对象？
