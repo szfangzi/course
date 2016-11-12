@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <link rel="stylesheet" href="../public/js/plugin/fullpage/jquery.fullPage.css">
+  <link rel="stylesheet" href="../public/js/plugin/fullpage/jquery.fullPage.theme.ppt.black.green.css">
+  <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="../public/js/plugin/fullpage/jquery.fullPage.js"></script>
+  <script>
+    $(function () {
+      $('.ppt').fullpage({});
+    });
+  </script>
+</head>
+<body>
+<div class="ppt">
+  <div class="section">
+    <h3>常见错误</h3>
+  </div>
+  <div class="section">
+    <div class="slide">
+      <h3>依赖错误</h3>
+      <p>Uncaught ReferenceError: "某个变量" is not defined</p>
+      <p>什么时候会出现这个错误？</p>
+    </div>
+    <div class="slide">
+      <h3>依赖错误</h3>
+      <p>如果在使用这个变量x的时候，在作用域里面找不到这个x，那么js引擎就会抛出ReferenceError</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="slide">
+      <h3>语法错误</h3>
+      <p>Uncaught SyntaxError: Invalid or unexpected token</p>
+      <p>什么时候会出现这个错误？</p>
+    </div>
+    <div class="slide">
+      <h3>语法错误</h3>
+      <p>那肯定是使用错误语法的时候啊 =。=</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="slide">
+      <h3>类型错误</h3>
+      <p>Uncaught TypeError: Cannot read property '某个属性' of undefined</p>
+      <p>什么时候会出现这个错误？</p>
+    </div>
+    <div class="slide">
+      <h3>类型错误</h3>
+      <p>当你在对这个变量进行不合理的操作时，比如非函数却用()进行函数调用，或者引用undefined类型的值得属性，那么js引擎就会抛出TypeError</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
