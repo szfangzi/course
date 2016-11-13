@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+</head>
+<body>
+
+
+<script>
+
+
+//变量提升
+//  function example1() {
+//    a=2;
+//    var a;
+//    console.log(a);
+//  }
+//  example1();
+//
+//  function example2() {
+//    console.log(a);
+//    var a = 2;
+//  }
+//  example2();
+
+//函数声明会提升，但是函数表达式不会提升
+//foo();
+//var foo = function () {
+//  console.log(1);
+//}
+//foo();
+//function foo() {
+//  console.log(1);
+//}
+//foo();
+//foo = function () {
+//  console.log(1);
+//}
+
+//  函数比变量优先提升, 所以编译器会发现var foo;是重复声明，自动忽略
+//foo();
+//var foo;
+//function foo() {
+//  console.log(1);
+//}
+//foo= function () {
+//  console.log(2);
+//}
+
+
+
+
+</script>
+
+</body>
+</html>
