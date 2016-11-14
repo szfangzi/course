@@ -1,5 +1,5 @@
 Vue.component('modal', {
-  template: '<div class="maskWrapper" id="popup-wrapper" v-bind:class="{show:data.show}">' +
+  template: '<div class="maskWrapper" id="popup-wrapper" v-show="data.show">' +
   '<div class="popupWrapper">' +
   '<div id="login" class="popup-box">' +
   '<h2><span class="popup-title">{{data.popupTitle}}</span> <a href="javascript:;" class="close" v-on:click="close">x</a></h2>' +

@@ -5,9 +5,6 @@
   top: 0;
   left: 0;
   z-index: 99;
-  display: none; }
-.maskWrapper.show{
-  display: block;
 }
 .maskWrapper .popupWrapper {
   position: absolute;

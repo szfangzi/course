@@ -5,6 +5,7 @@ $.ajax({
     async:false,
     success: function (data) {
         treeData = Util.nodeRecursion(data, "0");
+      console.log(treeData);
     }
 });
 
