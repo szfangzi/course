@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+</head>
+<body>
+
+<script>
+  //es5(2009年)新数组api
+  //判断是否是数组
+  //alert(Array.isArray([]));
+  //获取指定值在数组里面的下标
+  //alert(["Hello", "javaScript", "ECMAScript", "HTML5"].indexOf("javaScript"));
+
+  //forEach
+  var arr = [1,2,3,4,5];
+  //arr.forEach(function(v,i,list){
+  //  console.log(v,i,list);
+  //});
+
+
+  //every 只要数组有一个元素的条件不符合，终止循环并返回false，全部符合返回true
+  //var arr = [1,2,3,4,5];
+  //var flag = arr.every(function (val,index,list) {
+  //  console.log(val,index,list);
+  //  return val < 2;
+  //});
+  //console.log('这个数组是否全部符合条件？',flag);
+
+  //some 只要数组有一个元素的条件符合，终止循环并返回true，全部不符合返回false
+  //var arr = [1,2,3,4,5];
+  //function some(arr, fn) {
+  //  for (var i = 0; i < arr.length; i++) {
+  //    if(fn(arr[i],i,arr)){
+  //      return true;
+  //    }
+  //  }
+  //  return false;
+  //}
+  //var flag = some(arr, function (val,index,list) {
+  //  return val > 9;
+  //});
+  //var flag = arr.some(function (val,index,list) {
+  //  console.log(val,index,list);
+  //  return val < 2;
+  //});
+  //console.log('这个数组是否存在符合条件的？',flag);
+
+  //map 遍历后可以组建一个自定义新数组
+  //var arr = [1,2,3,4,5];
+  //var newArr = arr.map(function(v,i,list){
+  //  return {key:i,value:v};
+  //});
+  //console.log(newArr);
+
+  //
+  ////过滤器
+  //function filter(arr, fn) {
+  //
+  //}
+  //var newArr = filter([{isTick:1},{isTick:0}], function(n){
+  //    return n.isTick==0;
+  //});
+  //console.log(newArr);
+  //
+
+  //reduce
+  //var arr = [1,2,3,4,5];
+  //var sum = arr.reduce(function(item, next){
+  //  console.log(item, next);
+  //  return item+next
+  //});
+  //console.log(sum);
+
+  //reduceRight
+  //var arr = [1,2,3,4,5];
+  //var sum = arr.reduceRight(function(item, next){
+  //  console.log(item, next);
+  //  return item+next
+  //});
+  //console.log(sum);
+</script>
+
+</body>
+</html>
