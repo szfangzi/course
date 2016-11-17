@@ -34,6 +34,22 @@
   };
 
   obj.test();
+
+//  下边是一个复杂的案例
+  var obj = {
+    a:1,
+    b: function () {
+      console.log(this.a);
+    }
+  }
+  var a = 10;
+  obj.b();
+  setTimeout(obj.b, 100);
+  //obj.b传给fn后，fn只是跟obj.b一样指向同一个函数而已，实际上fn()的时候只是普通函数调用，所以这个时候this是指向window
+  //function setTimeout(fn,time) {
+  //
+  //  fn();
+  //}
 </script>
 
 </body>
