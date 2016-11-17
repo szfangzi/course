@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+  <script src="public/js/vue.js"></script>
+  <script src="public/js/vuex.js"></script>
+</head>
+<body>
+
+<test></test>
+
+<script>
+  const store = new Vuex.Store({
+    state: {
+      count: 0
+    },
+    mutations: {
+      increment: function (state) {
+        state.count++
+      }
+    }
+  });
+
+  Vue.component('test', {
+    template:'<div>{{count}}</div>',
+    computed:{
+      count: function () {
+        return this.$store.state.count;
+      }
+    }
+  })
+
+  var App = new Vue({
+    el:'body',
+    store:store
+  });
+
+  store.state.count = 1;
+  store.commit('increment');
+</script>
+</body>
+</html>
