@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+</head>
+<body>
+
+<script>
+//  ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效(块级作用域)。
+//  let的典型用法1
+  var tmp = new Date();
+  function f() {
+    if (false) {
+      var tmp = "hello world";
+    }
+    console.log(tmp);
+  }
+  f(); // undefined
+
+//  let的典型用法2
+  var s = 'hello';
+  for (var i = 0; i < s.length; i++) {
+    console.log(s[i]);
+  }
+  console.log(i); // 5
+
+//  let需要注意的地方
+var a = 1;
+window.a // 1
+let b = 1;
+window.b // undefined
+
+
+//const声明一个只读的常量。一旦声明，常量的值就不能改变。const的作用域与let命令相同：只在声明所在的块级作用域内有效。const声明的变量不得改变值，这意味着，const一旦声明变量，就必须立即初始化，不能留到以后赋值。
+
+//对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址。const命令只是保证变量名指向的地址不变，并不保证该地址的数据不变，所以将一个对象声明为常量必须非常小心。
+
+//  浅冻结数组与对象
+const foo = Object.freeze({a:1});
+//  深度冻结
+var constantize = (obj) => {
+  Object.freeze(obj);
+  Object.keys(obj).forEach( (key, value) => {
+    if ( typeof obj[key] === 'object' ) {
+    constantize( obj[key] );
+  }
+});
+};
+
+let [foo, [[bar], baz]] = [1, [[2], 3]];
+</script>
+
+</body>
+</html>
