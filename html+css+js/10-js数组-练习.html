@@ -24,10 +24,25 @@ var nums = [3,1,2,5,4];
 //console.log(nest[1][2]);
 
 //  练习3 写一个函数，功能是把数组里面的元素连加并打印最终结果
-
+var arr = [1,2,3,4,5];
+function cal(arr) {
+  var sum = 0;
+  for (var i = 0; i < arr.length; i++) {
+    sum+=arr[i];
+  }
+  return sum;
+}
 
 //  练习4 写一个函数printReverse()，功能是把一个数组里面的元素按反向顺序新建一个新数组
-
+var arr = [2,3,1,4,5];
+function printReverse(arr) {
+  var newArr = [];
+  for (var i = arr.length-1; i >= 0; i--) {
+    newArr.push(arr[i]);
+  }
+  return newArr;
+}
+console.log(printReverse(arr));
 
 // 练习5 写一个函数isUniform()，功能是如果数组里面的元素都相同，就返回true，否则返回false
 

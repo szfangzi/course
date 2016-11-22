@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+</head>
+<body>
+
+
+
+<!-- 这是这个列表的数据结构 [{"name":"学前端","isTick":0},{"name":"学后端","isTick":0},{"name":"学测试","isTick":0}]-->
+<!--isTick默认为0-->
+<h1>任务列表</h1>
+<input type="text" placeholder="请填写你的任务">
+<ul>
+
+</ul>
+<script>
+//  练习5 功能跟6-任务列表2一样，但是数据是要通过localStorage来存取
+  var arr = get('list');
+  for (var i = 0; i < arr.length; i++) {
+    if(arr[i].isTick){
+      $('ul').append('<li><input type="checkbox" checked>'+arr[i].name+'</li>');
+    }else{
+      $('ul').append('<li><input type="checkbox">'+arr[i].name+'</li>');
+    }
+  }
+
+$('input').on('keyup', function (e) {
+  var val = $('input').val().trim();
+  if(e.keyCode == 13 && val){
+    $('ul').append('<li><input type="checkbox">'+val+'</li>');
+    arr.push({name:val,isTick:0});
+    save('list', arr);
+  }
+});
+
+  function save(key, val){
+    val = JSON.stringify(val);
+    localStorage.setItem(key, val);
+  }
+
+  function get(key){
+    var val = localStorage.getItem(key);
+    if(val){
+      val = JSON.parse(val);
+      return val;
+    }else{
+      return [];
+    }
+
+  }
+
+
+
+</script>
+</body>
+</html>

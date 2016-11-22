@@ -21,6 +21,29 @@
 //  };
 //  console.log(obj);
 
+//  var id = 1, name='iphone';
+//  var obj = {
+//    id,
+//    name,
+//    getName(){
+//      return this.name;
+//    }
+//  };
+//  console.log(obj.getName());
+
+//var field="id";
+//var obj = {
+//  [field]:2
+//};
+//console.log(obj);
+
+var field="id";
+var val = 1;
+var obj = {
+  get[field](){return val},
+  set[field](value){  }
+};
+console.log(obj);
 
 </script>
 
