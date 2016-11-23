@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+</head>
+<body>
+
+<script>
+var num = 1350;
+console.log(`num: ${num}`);
+console.log(`num: ${"int-"+num}`);
+
+var msg = `a
+b
+c`;
+console.log(msg);
+
+let num1 = 1000;
+function showMsg(msg) {
+  let num1 = 99;
+  console.log(msg);
+}
+showMsg(`num1:${num1}`);
+
+//太诡异了。。。。
+function process(msg, ...vals) {
+  console.log(msg);
+  console.log(vals);
+}
+process `temp:${num} for ${num1}`;
+
+</script>
+
+</body>
+</html>

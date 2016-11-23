@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+</head>
+<body>
+<!-- 练习7 和上次任务列表功能一样，但是每个li元素里面要多一个删除按钮，可以删除li元素 元素的删除用jq的remove方法 -->
+<!--练习8 刚才删除li元素后，localStorge里面的相应数据也要删除-->
+<h1>任务列表</h1>
+<input type="text" placeholder="请填写你的任务">
+<ul>
+
+</ul>
+
+
+<!--练习9 每个li元素里面要多一个复选框，显示列表的时候，如果isTick为1，那复选框要打钩，否则不打钩 -->
+
+<!--练习10 如果点击复选框，打钩后，那么localStorge相应的数据也要修改，反之亦然。 提示：$(复选框选择器).prop('checked')可以获取打钩状态-->
+
+<!--练习11 如果isTick是1，那么我的任务名要加删除线(样式是text-decoration: line-through;)，否则不要删除线-->
+
+<script>
+  $('ul').on('click', '.check', function () {
+    var name = $(this).parent().find('span').html();
+    for (var i = 0; i < arr.length; i++) {
+
+
+    }
+
+  });
+
+//  以下功能都要存储的localstorge
+//  1.文本框回车添加任务
+//  2.任务要放到ul里面
+//  2.每个任务有个复选框和删除按钮
+//  3.任务删除，复选框点击，均要修改localstorge的数据
+</script>
+</body>
+</html>
