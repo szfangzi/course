@@ -13,7 +13,11 @@
 <ul>
 
 </ul>
-
+<span class="unf-len">还剩下<b></b>个未完成的任务</span>
+<a href="javascript:;" id="all-btn">所有任务</a>
+<a href="javascript:;" id="unf-btn">未完成的任务</a>
+<a href="javascript:;" id="f-btn">已完成的任务</a>
+<a href="javascript:;" id="del-all-btn">删除所有已完成的任务</a>
 
 <!--练习9 每个li元素里面要多一个复选框，显示列表的时候，如果isTick为1，那复选框要打钩，否则不打钩 -->
 
@@ -21,16 +25,99 @@
 
 <!--练习11 如果isTick是1，那么我的任务名要加删除线(样式是text-decoration: line-through;)，否则不要删除线-->
 
+<!--练习12 点击 所有任务 未完成的任务 已完成的任务 列表要显示相应的数据 -->
+
+<!--练习13 计算还剩下多少个未完成任务并显示相应位置 -->
+
+<!--练习14 增加删除所有已完成的任务的功能 -->
+
 <script>
+  var arr = get('list');
+  listRender(arr);
+
+  $('input').on('keyup', function (e) {
+    var val = $('input').val().trim();
+    var flag = true;
+    if(e.keyCode == 13 && val){
+      for (var i = 0; i < arr.length; i++) {
+        if(arr[i].name == val){
+          flag = false;
+          break;
+        }
+      }
+      if(flag){
+        arr.push({name:val,isTick:0});
+        save('list', arr);
+        listRender(arr);
+      }
+
+    }
+  });
+
   $('ul').on('click', '.check', function () {
     var name = $(this).parent().find('span').html();
     for (var i = 0; i < arr.length; i++) {
-
-
+      if(arr[i].name == name){
+        if($(this).prop('checked')){
+          arr[i].isTick = 1;
+        }else{
+          arr[i].isTick = 0;
+        }
+      }
     }
+    save('list', arr);
+    listRender(arr);
 
   });
 
+  function listRender(arr) {
+    var html = '';
+    for (var i = 0; i < arr.length; i++) {
+      if(arr[i].isTick){
+        html += '<li><input type="checkbox" class="check" checked><span>'+arr[i].name+'</span><button>删除</button></li>';
+      }else{
+        html += '<li><input type="checkbox" class="check"><span>'+arr[i].name+'</span><button>删除</button></li>';
+      }
+    }
+    $('ul').html(html);
+    
+  }
+
+
+
+  function save(key, val){
+    val = JSON.stringify(val);
+    localStorage.setItem(key, val);
+  }
+
+  function get(key){
+    var val = localStorage.getItem(key);
+    if(val){
+      val = JSON.parse(val);
+      return val;
+    }else{
+      return [];
+    }
+
+  }
+
+
+
+
+//  过滤器
+//  var newArr = [{name:"a",isTick:1},{name:"b",isTick:0}].filter(function(n){
+//    return n.isTick==1;
+//  });
+//  console.log(newArr);
+
+//  任务12思路
+//  $('#unf-btn').on('click', function (e) {
+//    过滤数组
+//    把新数组拼成页面字符串
+//    把页面字符串填到页面上
+//
+//  });
+//  任务简要
 //  以下功能都要存储的localstorge
 //  1.文本框回车添加任务
 //  2.任务要放到ul里面
