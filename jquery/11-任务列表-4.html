@@ -50,6 +50,7 @@
   var arr = get('list');
   listRender(arr);
 
+//  回车保存新任务
   $('input').on('keyup', function (e) {
     var val = $('input').val().trim();
     if(e.keyCode == 13 && val){
@@ -60,6 +61,7 @@
     }
   });
 
+//  点击复选框修改任务是否完成
   $('ul').on('click', '.check', function (e) {
     var $name = $(this).parent().find('.name-text');
     var name = $name.html();
@@ -77,11 +79,13 @@
     save('list', arr);
     listRender(arr);
 
+//    双击文本修改任务
   }).on('dblclick', '.name-text', function (e) {
     var $this = $(this);
     $this.parent().addClass('changed');
     $this.parent().find('.name-input').focus().val($this.html());
 
+//    文本框失去焦点后修改任务名
   }).on('blur', '.name-input', function (e) {
     var $this = $(this);
     var id = $this.parent().attr('tid');
@@ -97,7 +101,7 @@
       save('list', arr);
       listRender(arr);
     }
-
+//删除任务
   }).on('click', 'button', function (e) {
     var $this = $(this);
     var id = $this.parent().attr('tid');
@@ -111,8 +115,7 @@
     }
   });
 
-
-
+//  渲染列表
   function listRender(arr) {
     var html = '';
     for (var i = 0; i < arr.length; i++) {
@@ -126,6 +129,7 @@
 
     lenRender();
   }
+//  计算未完成任务数量更新到页面上
   function lenRender() {
     var len = arr.filter(function (n) {
       return n.isTick == 0;
@@ -133,21 +137,25 @@
     $('.unf-len b').html(len);
   }
 
+//显示所有任务
   $('#all-btn').on('click', function () {
     listRender(arr);
   });
+//  显示未完成任务
   $('#unf-btn').on('click', function () {
     var newArr = arr.filter(function (n) {
       return n.isTick == 0;
     });
     listRender(newArr);
   });
+//  显示已完成任务
   $('#f-btn').on('click', function () {
     var newArr = arr.filter(function (n) {
       return n.isTick == 1;
     });
     listRender(newArr);
   });
+//  删除所有未完成任务
   $('#del-all-btn').on('click', function () {
     var newArr = arr.filter(function (n) {
       return n.isTick == 0;
@@ -157,11 +165,13 @@
     listRender(arr);
   });
 
+//  保存值到localstorge指定key
   function save(key, val){
     val = JSON.stringify(val);
     localStorage.setItem(key, val);
   }
 
+//  从localstorge获取指定key的值
   function get(key){
     var val = localStorage.getItem(key);
     if(val){
@@ -173,6 +183,7 @@
 
   }
 
+//  生成唯一的id
   function uuid() {
     var i, random;
     var uuid = '';
