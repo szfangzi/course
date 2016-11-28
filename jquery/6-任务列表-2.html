@@ -15,16 +15,16 @@
 <script>
     //    通过数据填充页面
     var arr = [
-        {"name":"学前端","isTick":1},
-        {"name":"学后端","isTick":0},
-      {"name":"学测试","isTick":1}
+        {"id":1,"name":"学前端","isTick":1},
+        {"id":2,"name":"学后端","isTick":0},
+      {"id":3,"name":"学测试","isTick":1}
     ];
 
 //    在5-任务列表1的功能的基础上，通过用arr假数据添加到页面ul上
 
     //    练习3 arr每个元素显示的效果如下，加到ul里面
-    //    <li>
-    //    <input type="checkbox"><span>学前端</span>
+    //    <li tid="相应的id">
+    //    <input type="checkbox"><span>相应的任务名称</span>
     //    </li>
 
     //练习4 如果isTick为1，那么复选框打钩
