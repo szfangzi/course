@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <title></title>
     <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+  <style>
+    .name-input{
+      width: 50px;
+      display: none;
+    }
+    li.changed .name-input{
+      display: inline-block;
+    }
+    li.changed .name-text{
+      display: none;
+    }
+    .del-line{
+      text-decoration: line-through;
+    }
+  </style>
 </head>
 <body>
 <!-- 练习7 和上次任务列表功能一样，但是每个li元素里面要多一个删除按钮，可以删除li元素 元素的删除用jq的remove方法 -->
@@ -35,61 +50,128 @@
   var arr = get('list');
   listRender(arr);
 
+//  回车保存新任务
   $('input').on('keyup', function (e) {
     var val = $('input').val().trim();
-    var flag = true;
     if(e.keyCode == 13 && val){
-      for (var i = 0; i < arr.length; i++) {
-        if(arr[i].name == val){
-          flag = false;
-          break;
-        }
-      }
-      if(flag){
-        arr.push({name:val,isTick:0});
-        save('list', arr);
-        listRender(arr);
-      }
-
+      arr.push({name:val,isTick:0,id:uuid()});
+      save('list', arr);
+      listRender(arr);
+      $('input').val('');
     }
   });
 
-  $('ul').on('click', '.check', function () {
-    var name = $(this).parent().find('span').html();
+//  点击复选框修改任务是否完成
+  $('ul').on('click', '.check', function (e) {
+    var $name = $(this).parent().find('.name-text');
+    var name = $name.html();
     for (var i = 0; i < arr.length; i++) {
       if(arr[i].name == name){
         if($(this).prop('checked')){
           arr[i].isTick = 1;
+          $name.addClass('del-line');
         }else{
           arr[i].isTick = 0;
+          $name.removeClass('del-line');
         }
       }
     }
     save('list', arr);
     listRender(arr);
 
+//    双击文本修改任务
+  }).on('dblclick', '.name-text', function (e) {
+    var $this = $(this);
+    $this.parent().addClass('changed');
+    $this.parent().find('.name-input').focus().val($this.html());
+
+//    文本框失去焦点后修改任务名
+  }).on('blur', '.name-input', function (e) {
+    var $this = $(this);
+    var id = $this.parent().attr('tid');
+    $this.parent().removeClass('changed');
+    var name = $this.val().trim();
+    if(name){
+      for (var i = 0; i < arr.length; i++) {
+        if(arr[i].id == id){
+          arr[i].name = name;
+          break;
+        }
+      }
+      save('list', arr);
+      listRender(arr);
+    }
+//删除任务
+  }).on('click', 'button', function (e) {
+    var $this = $(this);
+    var id = $this.parent().attr('tid');
+    for (var i = 0; i < arr.length; i++) {
+      if(arr[i].id == id){
+        arr.splice(i, 1);
+        save('list', arr);
+        listRender(arr);
+        break;
+      }
+    }
   });
 
+//  渲染列表
   function listRender(arr) {
     var html = '';
     for (var i = 0; i < arr.length; i++) {
       if(arr[i].isTick){
-        html += '<li><input type="checkbox" class="check" checked><span>'+arr[i].name+'</span><button>删除</button></li>';
+        html += '<li tid="'+arr[i].id+'"><input type="checkbox" class="check" checked><span class="name-text del-line">'+arr[i].name+'</span><input type="text" class="name-input" /><button>删除</button></li>';
       }else{
-        html += '<li><input type="checkbox" class="check"><span>'+arr[i].name+'</span><button>删除</button></li>';
+        html += '<li tid="'+arr[i].id+'"><input type="checkbox" class="check"><span class="name-text">'+arr[i].name+'</span><input type="text" class="name-input" /><button>删除</button></li>';
       }
     }
     $('ul').html(html);
-    
+
+    lenRender();
+  }
+//  计算未完成任务数量更新到页面上
+  function lenRender() {
+    var len = arr.filter(function (n) {
+      return n.isTick == 0;
+    }).length;
+    $('.unf-len b').html(len);
   }
 
+//显示所有任务
+  $('#all-btn').on('click', function () {
+    listRender(arr);
+  });
+//  显示未完成任务
+  $('#unf-btn').on('click', function () {
+    var newArr = arr.filter(function (n) {
+      return n.isTick == 0;
+    });
+    listRender(newArr);
+  });
+//  显示已完成任务
+  $('#f-btn').on('click', function () {
+    var newArr = arr.filter(function (n) {
+      return n.isTick == 1;
+    });
+    listRender(newArr);
+  });
+//  删除所有未完成任务
+  $('#del-all-btn').on('click', function () {
+    var newArr = arr.filter(function (n) {
+      return n.isTick == 0;
+    });
+    arr = newArr;
+    save('list', arr);
+    listRender(arr);
+  });
 
-
+//  保存值到localstorge指定key
   function save(key, val){
     val = JSON.stringify(val);
     localStorage.setItem(key, val);
   }
 
+//  从localstorge获取指定key的值
   function get(key){
     var val = localStorage.getItem(key);
     if(val){
@@ -101,7 +183,21 @@
 
   }
 
+//  生成唯一的id
+  function uuid() {
+    var i, random;
+    var uuid = '';
 
+    for (i = 0; i < 32; i++) {
+      random = Math.random() * 16 | 0;
+      if (i === 8 || i === 12 || i === 16 || i === 20) {
+        uuid += '-';
+      }
+      uuid += (i === 12 ? 4 : (i === 16 ? (random & 3 | 8) : random)).toString(16);
+    }
+
+    return uuid;
+  }
 
 
 //  过滤器
