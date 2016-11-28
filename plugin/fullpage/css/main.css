@@ -101,259 +101,29 @@ li{
 #wrapper{
     max-width: 640px;
 }
-.page{
+.section{
     position: relative;
     background: url('../img/page-bg.png') 0 0;
 }
-.page .title{
-    background: url('../img/page-caption_bg.png') 0 0 no-repeat;
-    margin-top: 0;
-    width: 25rem;
-    height: 5.6rem;
-    background-size: 100%;
-    opacity: 0;
-}
-
-.page.page-load .title{
-    margin-top: 15%;
-    opacity: 1;
-    animation: title-in 1s 1;
-}
-@keyframes title-in{
-    from {margin-top:0px;opacity: 0}
-    to {margin-top:15%;opacity: 1}
-}
-@font-face{
-    font-family: 'light';
-    src: url('s.ttf');
-}
-.page .title span{
-    font-size: 2.2rem;
-    margin-left: 17%;
-    display: inline-block;
-    line-height: 4.9rem;
-    color: #fff;
-    font-weight: bold;
-    width: 19rem;
-    text-align: center;
-    font-family: 'light';
-}
-
-/*首页样式*/
-.page.p1{
+.section.p1{
     background-image: url('../img/face-bg.png');
 }
-.page.p1 .logo{
-  text-align: center;
+.section.p1 .logo{
     margin-top:0;
     opacity: 0;
+  transition: 500ms;
 }
-.page.p1.page-load .logo{
-    margin-top:24%;
-    opacity: 1;
-    animation: index-logo-in 1s 1;
-}
-.page.p1 .logo img{
-    height: 100%;
-}
-@keyframes index-logo-in{
-    from {margin-top:0px;opacity: 0}
-    to {margin-top:24%;opacity: 1}
-}
-.page.p1 .slogan{
-
-  text-align: center;
-    margin-top:0;
-    opacity: 0;
-}
-.page.p1.page-load .slogan{
+.section.p1 .slogan{
     margin-top:10%;
-    opacity: 1;
-    animation: index-slogan-in 1s 1;
-}
-.page.p1 .slogan img{
-  height: 100%;
-}
-@keyframes index-slogan-in{
-    from {margin-top:0px;opacity: 0}
-    to {margin-top:10%;opacity: 1}
-}
-.page.p1 .lbox{
-  text-align: center;
-  margin-top:10%;
     opacity: 0;
+  transition: 500ms;
 }
-.page.p1.page-load .lbox{
+.section.p1 .bottom{
   margin-top:20%;
-    opacity: 1;
-    animation: index-lbox-in 1s 1;
-}
-.page.p1 .lbox img{
-  height: 100%;
-}
-@keyframes index-lbox-in{
-    from {left:-58%;bottom:-78%;opacity: 0}
-    to {left:0px;bottom:-1%;opacity: 1}
-}
-.page.p1 .rbox{
-    position: absolute;
-    bottom: -70%;
-    right: -42%;
-    width: 42%;
     opacity: 0;
+  transition: 500ms;
 }
-.page.p1.page-load .rbox{
-    bottom: -1%;
-    right: 0;
-    opacity: 1;
-    animation: index-rbox-in 1s 1;
+.section.p2 p, .section.p3 p{
+  text-align: center;
+  margin-top: 30px;
 }
-.page.p1 .rbox img{
-    width: 100%;
-}
-@keyframes index-rbox-in{
-    from {right:-42%;bottom:-70%;opacity: 0}
-    to {right:0px;bottom:-1%;opacity: 1}
-}
-
-/*核心理念*/
-.page.p2 .text{
-    color: #ff4343;
-    width: 100%;
-    text-align: center;
-    font-size: 2.2rem;
-    font-weight: bold;
-    opacity: 0;
-    margin-top: 0;
-}
-.page.p2.page-load .text{
-    bottom: 28%;
-    opacity: 1;margin-top: 5%;
-
-    animation: hxln-text-in 1s 1;
-}
-@keyframes hxln-text-in{
-    from {margin-top:0%;opacity: 0}
-    to {margin-top:5%;opacity: 1}
-}
-.page.p2 .text b{
-    font-size: 3rem;
-}
-.page.p2 .people-say{
-    position: absolute;
-    bottom: 0%;
-    width: 70%;
-    opacity: 0;
-    left: 15%;
-    color: #ffffff;
-}
-.page.p2.page-load .people-say{
-    bottom: 28%;
-    opacity: 1;
-    animation: hxln-people-say-in 1s 1;
-}
-@keyframes hxln-people-say-in{
-    from {bottom:0%;opacity: 0}
-    to {bottom:28%;opacity: 1}
-}
-.page.p2 .people-say .c{
-    background-color: #99C0FF;
-    line-height: 1.8rem;
-    font-size: 1.6rem;
-    box-sizing: border-box;
-    overflow: hidden;
-    width: 100%;
-    padding: 0 3%;
-}
-.page.p2 .people-say .t-bg{
-    width: 100%;
-    display: block;
-}
-.page.p2 .people-say .b-bg{
-    width: 100%;
-    display: block;
-}
-.page.p2 .people{
-    position: absolute;
-    bottom: -60%;
-    width: 60%;
-    opacity: 0;
-    left: 20%;
-}
-.page.p2.page-load .people{
-    bottom: 2%;
-    opacity: 1;
-    animation: hxln-people-in 1s 1;
-}
-.page.p2 .people img{
-    width: 100%;
-}
-@keyframes hxln-people-in{
-    0% {bottom:-60%;opacity: 0}
-    5% {bottom:20%;opacity: 0.5}
-    100% {bottom:2%;opacity: 1}
-}
-
-/*课程方向分布*/
-.page.p3 .people{
-    position: absolute;
-    bottom: -20%;
-    width: 60%;
-    opacity: 0;
-    left: 20%;
-    transform:rotate(360deg);
-    transition:width 2s, bottom 2s, opacity 2s, transform 2s ;
-}
-.page.p3.page-load .people{
-    bottom: 30%;
-    opacity: 1;
-    transform:rotate(0deg);
-}
-.page.p3 .people img{
-    width: 100%;
-}
-/*移动开发(延时动画效果)*/
-.page.p4 .people{
-    position: absolute;
-    bottom: -20%;
-    width: 60%;
-    opacity: 0;
-    left: 20%;
-    transform:rotate(360deg);
-    transition:width 2s, bottom 2s, opacity 2s, transform 2s ;
-    transition-delay: 1s;
-    transition-timing-function: ;
-}
-.page.p4.page-load .people{
-    bottom: 30%;
-    opacity: 1;
-    transform:rotate(0deg);
-}
-.page.p4 .people img{
-    width: 100%;
-}
-
-/*前端开发 多列*/
-.page.p5 .column{
-    column-count: 3;
-    column-gap: 50px;
-    column-rule: 5px outset #ff0000;
-}
-/*.page.p5 .people{*/
-    /*position: absolute;*/
-    /*bottom: -20%;*/
-    /*width: 60%;*/
-    /*opacity: 0;*/
-    /*left: 20%;*/
-    /*transform:rotate(360deg);*/
-    /*transition:width 2s, bottom 2s, opacity 2s, transform 2s ;*/
-    /*transition-delay: 1s;*/
-/*}*/
-/*.page.p5.page-load .people{*/
-    /*bottom: 30%;*/
-    /*opacity: 1;*/
-    /*transform:rotate(0deg);*/
-/*}*/
-/*.page.p5 .people img{*/
-    /*width: 100%;*/
-/*}*/

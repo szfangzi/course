@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh"> <!--谷歌翻译会自动切换成lang指定的语言-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!--ie=edge 强制使用IE最新版本渲染(IE11已被弃用)-->
+    <title>慕课网2015学习情况</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <!-- build:css css/combined.css -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- endbuild -->
+</head>
+<body>
+<div id="wrapper">
+    <div class="section" style="background-color: #0000FF">
+        1
+    </div>
+    <div class="section" style="background-color:darkgoldenrod">
+        2
+    </div>
+    <div class="section" style="background-color:seagreen">
+        3
+    </div>
+</div>
+
+<!-- build:js js/combined.js -->
+<script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+<script type="text/javascript" src="js/vendor/jquery.fullPage.js"></script>
+<!-- endbuild -->
+<script>
+  $('#wrapper').fullpage({
+    onLeave: function (index, nextIndex, direction) {
+      console.log('离开页面的时候执行');
+    },
+    afterLoad: function (anchorLink, index) {
+      console.log('加载到下一个页面的时候执行');
+    },
+    afterRender: function () {
+      console.log('刚打开页面的时候执行');
+    }
+  });
+
+</script>
+</body>
+</html>
