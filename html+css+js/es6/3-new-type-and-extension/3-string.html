@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+  <script src="../public/js/traceur.js"></script>
+  <script src="../public/js/es6-module-loader-dev.js"></script>
+</head>
+<body>
+
+<script>
+
+
+//let title = "标题1";
+////包含
+//console.log(title.startsWith('标'));
+//console.log(title.includes('题'));
+
+//直接在字符串转义unicode编码
+//let title = "标题1 \u{1f3c4}";
+////包含
+//console.log(title);
+
+//var surfer = "\u{1f30a}\u{1f3c4}\u{1f40b}";
+////console.log(Array.from(surfer).length);
+////
+////console.log(surfer.length);
+//
+////获取下标为0的编码并且转换成16进制
+//console.log(surfer.codePointAt(0).toString(16));
+////编码转换成字符
+//console.log(String.fromCodePoint(0x1f30a));
+
+//let title = 'Surfer';
+//let output1 = `${title} \u{1f30a}\n`;
+//console.log(output1);
+////编码不转换
+//let output2 = String.raw`${title} \u{1f30a}\n`;
+//console.log(output2);
+
+var wave = "\u{1f30a}";
+//字符串循环拼接
+console.log(wave.repeat(10));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+  <script src="../../public/js/traceur.js"></script>
+  <script src="../../public/js/es6-module-loader-dev.js"></script>
+</head>
+<body>
+
+<script>
+//  类的属性
+  class Task{
+//    静态方法，直接通过类访问
+    static getDefaultId(){
+      return 0;
+    }
+  }
+
+console.log(Task.getDefaultId());
+
+</script>
+
+</body>
+</html>

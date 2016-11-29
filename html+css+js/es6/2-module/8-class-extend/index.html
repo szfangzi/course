@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+  <script src="../../public/js/traceur.js"></script>
+  <script src="../../public/js/es6-module-loader-dev.js"></script>
+</head>
+<body>
+
+<script>
+//  继承语法入门
+  class Task{
+    constructor(){
+      console.log('我正在构造一个Task实例对象');
+    }
+  }
+  class WorkTask extends Task{
+  }
+  let work = new WorkTask();
+
+//构造函数传参
+//  class Task{
+//    constructor(name){
+//      console.log('我正在构造一个Task实例对象：'+name);
+//    }
+//  }
+//  class WorkTask extends Task{
+//  }
+//  let work = new WorkTask('学前端');
+
+//  class Task{
+//    constructor(){
+//      console.log('我正在构造一个Task实例对象');
+//    }
+//  }
+//  class WorkTask extends Task{
+//    constructor(){
+////      子类的构造函数必须要先执行super，不然会报错
+//      super();
+//      console.log('我正在构造一个WorkTask实例对象');
+//    }
+//  }
+//  let work = new WorkTask();
+
+
+
+//class Task{
+//  constructor(){
+//    console.log('我正在构造一个Task实例对象');
+//  }
+//  //子类的实例对象可以调用父类的方法
+//  getTaskCount(){
+//    return 50;
+//  }
+//}
+//class WorkTask extends Task{
+//  constructor(){
+//    super();
+//    console.log('我正在构造一个WorkTask实例对象');
+//  }
+////  重写父类的方法
+////  getTaskCount(){
+////    return 100;
+////  }
+////  重写父类的方法,
+////  getTaskCount(){
+////    子类方法里面调用父类的方法
+////    return super.getTaskCount()+6;
+////  }
+//}
+//let work = new WorkTask();
+//
+//console.log(work.getTaskCount());
+
+
+//let task = {
+//  getTaskCount(){
+//    return 50;
+//  }
+//}
+//let workTask = {
+//  getTaskCount(){
+//    return super.getTaskCount()+6;
+//  }
+//}
+////第一个参数是对象，第二个参数是这个对象指向的原型
+//  Object.setPrototypeOf(workTask, task);
+
+</script>
+
+</body>
+</html>

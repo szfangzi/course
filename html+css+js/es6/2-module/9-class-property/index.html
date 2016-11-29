@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+  <script src="../../public/js/traceur.js"></script>
+  <script src="../../public/js/es6-module-loader-dev.js"></script>
+</head>
+<body>
+
+<script>
+//  类的属性
+  class Task{
+    constructor(name){
+      this.name = name;
+      console.log('我正在构造一个Task实例对象:'+this.name);
+    }
+  }
+  class WorkTask extends Task{
+    constructor(name){
+      super(name);
+//      console.log('我正在构造一个WorkTask实例对象:'+this.name);
+    }
+  }
+  let work = new WorkTask('学前端');
+console.log(work.name);
+</script>
+
+</body>
+</html>

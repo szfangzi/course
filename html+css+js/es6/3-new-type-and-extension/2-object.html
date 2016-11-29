@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+  <script src="../public/js/traceur.js"></script>
+  <script src="../public/js/es6-module-loader-dev.js"></script>
+</head>
+<body>
+
+<script>
+//let a = {a:1,z:{c:1}}, b={b:2,a:9};
+//let c = {};
+////浅拷贝,后边的参数的属性如果和前边的参数的属性相同，会直接覆盖
+//Object.assign(c, a, b);
+//console.log(c);
+////因为是浅拷贝，修改c的a属性，不会影响a的a属性
+//c.a = 3;
+////二级对象和数组就会影响
+//c.z.c = 2;
+
+//let a = {a:1}, b={b:2,a:5};
+////defineProperty声明的属性c不会拷贝到target
+//Object.defineProperty(b, 'c', {
+//  value:10,
+//  enumerable:false
+//});
+//let target = {};
+//Object.assign(target, a, b);
+//console.log(target);
+
+
+//console.log(NaN===NaN);
+//console.log(Object.is(NaN,NaN));
+
+//console.log(0===-0);
+//console.log(Object.is(0,-0));
+
+//let article = {
+//  title:'标题1',
+//  [Symbol.for('article')]:'my article'
+//};
+//console.log(Object.getOwnPropertySymbols(article));
+
+
+
+</script>
+
+</body>
+</html>
