@@ -182,23 +182,28 @@ body {
     myScroll = new IScroll('#wrapper', {
       mouseWheel: true,
       infiniteElements: '#scroller .row',
-      //infiniteLimit: 2000,
+//      列表长度限制
+      //infiniteLimit: 200,
       dataset: requestData,
       dataFiller: updateContent,
-      cacheSize: 1000
+      cacheSize: 100
     });
   }
 
+//  count就是cacheSize，每次获取列表数据的数量，start就是每次加载数据的起始元素序号
   function requestData (start, count) {
     $.get('dataset.php?start=' + +start + '&count=' + +count, function (data) {
+//      updateCache的第二个参数是返回的列表数组
       myScroll.updateCache(start, data);
     });
   }
 
+//  这里的data是数组的每一个元素，el是infiniteElements的每一个dom元素
   function updateContent (el, data) {
     el.innerHTML = data;
   }
 
+//  修复移动端的一个bug
   document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 
 </script>
