@@ -31,6 +31,9 @@
     li:nth-of-type(3){
       background-color: green;
     }
+    li:nth-of-type(4){
+      background-color: grey;
+    }
     .prev{
       position: absolute;
       left: 0;
@@ -49,15 +52,23 @@
     <li>1</li>
     <li>2</li>
     <li>3</li>
+    <li>4</li>
   </ul>
   <a href="javascript:;" class="page-change prev">上一页</a>
   <a href="javascript:;" class="page-change next">下一页</a>
 </div>
 
 <script>
+//  当前第几页
   var current = 1;
   var len = $('.slider li').length;
   var playInterval = null;
+
+//根据li数量修改样式
+  $('.slider ul').width(len*100+'%');
+  $('.slider li').width(100/len+'%');
+
+//上一页 下一页
   $('.page-change').on('click', function (e) {
     var $this = $(this);
     if($this.hasClass('prev')){
@@ -76,6 +87,7 @@
     $('.slider ul').animate({left:-(current-1)*100+'%'});
   });
 
+//鼠标移上去停止轮播
   $('.slider').on('mouseenter', function () {
     clearInterval(playInterval);
   }).on('mouseleave', function () {
@@ -84,6 +96,7 @@
     },2000);
   });
 
+//自动轮播
   playInterval = setInterval(function () {
     $('.next').click();
   },2000);

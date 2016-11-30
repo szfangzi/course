@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+  <script src="../public/js/traceur.js"></script>
+  <script src="../public/js/es6-module-loader-dev.js"></script>
+</head>
+<body>
+
+<script>
+//  y修饰符也叫做 粘连（sticky）修饰符，作用与g类似，也是全局匹配，后一次匹配都从上一次匹配成功的下一个位置开始，不同之处在于，g修饰符只要剩余位置中存在匹配即可，而y修饰符确保匹配必须从剩余的第一个位置开始，也就是 粘连 的含义。
+let pattern = /900/y;
+console.log(pattern.test('900800900'));
+
+
+
+
+</script>
+
+</body>
+</html>
