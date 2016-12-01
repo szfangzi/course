@@ -16,8 +16,11 @@
 <script>
     var obj = {name:"小明"};
 
+//    获取模板
     var tmpl = $('#tmpl').html();
+//    把数据绑定到模板-相当于拼接好字符串
     var html = ejs.render(tmpl, {data:obj});
+//    把拼接好的字符串填写到相应的页面位置
     $('#name-box').html(html);
 </script>
 

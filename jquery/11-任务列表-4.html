@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/ejs.min.js"></script>
   <style>
     .name-input{
       width: 50px;
@@ -47,6 +48,12 @@
 <!--练习14 增加删除所有已完成的任务的功能 -->
 
 <!--练习15 双击任务名称会切换成文本框，失去焦点后会把文本框的新值替换老的任务名称 -->
+
+<script type="text/template" id="tmpl">
+  <% for(var i=0;i<arr.length;i++){ %>
+  <li tid="<%=arr[i].id%>" ><input type="checkbox" class="check" <%if(arr[i].isTick){%>checked<%}%> ><span class="name-text <%if(arr[i].isTick){%>del-line<%}%>"><%=arr[i].name%></span><input type="text" class="name-input" /><button>删除</button></li>
+  <% } %>
+</script>
 
 <script>
   var arr = get('list');
@@ -118,17 +125,24 @@
   });
 
 //  渲染列表
+//  function listRender(arr) {
+//    var html = '';
+//    for (var i = 0; i < arr.length; i++) {
+//      if(arr[i].isTick){
+//        html += '<li tid="'+arr[i].id+'"><input type="checkbox" class="check" checked><span class="name-text del-line">'+arr[i].name+'</span><input type="text" class="name-input" /><button>删除</button></li>';
+//      }else{
+//        html += '<li tid="'+arr[i].id+'"><input type="checkbox" class="check"><span class="name-text">'+arr[i].name+'</span><input type="text" class="name-input" /><button>删除</button></li>';
+//      }
+//    }
+//    $('ul').html(html);
+//
+//    lenRender();
+//  }
+//  渲染列表(ejs模板引擎版)
   function listRender(arr) {
-    var html = '';
-    for (var i = 0; i < arr.length; i++) {
-      if(arr[i].isTick){
-        html += '<li tid="'+arr[i].id+'"><input type="checkbox" class="check" checked><span class="name-text del-line">'+arr[i].name+'</span><input type="text" class="name-input" /><button>删除</button></li>';
-      }else{
-        html += '<li tid="'+arr[i].id+'"><input type="checkbox" class="check"><span class="name-text">'+arr[i].name+'</span><input type="text" class="name-input" /><button>删除</button></li>';
-      }
-    }
+    var tmpl = $('#tmpl').html();
+    var html = ejs.render(tmpl, {arr:arr});
     $('ul').html(html);
-
     lenRender();
   }
 //  计算未完成任务数量更新到页面上
