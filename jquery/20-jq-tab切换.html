@@ -30,9 +30,6 @@
   border-right: 1px solid #aaa;
 
 }
-.box .t .item.on{
-  display: inline-block;
-}
 .border{
   display: none;
 }
@@ -98,8 +95,6 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, aliquam a
 <script>
 $('.item').on('mouseenter', function () {
   var $this = $(this);
-  $('.item').removeClass('on');
-  $this.addClass('on');
   $('.border').css('left', $this.index()*50+'px');
   $('.content').removeClass('on');
   $('.content').eq($this.index()).addClass('on');

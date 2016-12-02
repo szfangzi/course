@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+  <script src="../public/js/traceur.js"></script>
+  <script src="../public/js/es6-module-loader-dev.js"></script>
+</head>
+<body>
+
+<script>
+
+//  function *process() {
+//    let value = 4 * (yield 42);
+//    console.log(value);
+//
+//  }
+//  let it = process();
+//  console.log(it.next());
+
+
+function *process() {
+  yield 42;
+//  数组分解
+  yield* [1,2,3];
+
+}
+let it = process();
+console.log(it.next().value);
+console.log(it.next().value);
+console.log(it.next().value);
+console.log(it.next().value);
+console.log(it.next().value);
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

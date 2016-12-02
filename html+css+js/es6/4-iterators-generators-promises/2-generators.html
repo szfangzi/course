@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+  <script src="../public/js/traceur.js"></script>
+  <script src="../public/js/es6-module-loader-dev.js"></script>
+</head>
+<body>
+
+<script>
+//  生成器(generators)是迭代器
+//  function *process() {
+////一个yield就是一个表达式
+//    yield 8000;
+//    yield 8001;
+//
+//  }
+//  let it = process();
+//  console.log(it.next());
+//  console.log(it.next());
+//  console.log(it.next());
+
+
+
+//function *process() {
+//  let nextId = 7000;
+//  while(true){
+//    yield nextId++;
+//  }
+//}
+//let it = process();
+//console.log(it.next());
+//console.log(it.next());
+//console.log(it.next());
+//console.log(it.next());
+//console.log(it.next());
+
+
+function *process() {
+  let nextId = 7000;
+  while(true){
+    yield nextId++;
+  }
+}
+//能读取出迭代器的value值
+for (let id of process()) {
+  if(id>7002){
+    break;
+  }
+  console.log(id);
+}
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
