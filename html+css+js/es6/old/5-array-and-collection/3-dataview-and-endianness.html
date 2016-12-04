@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+  <script src="../public/js/traceur.js"></script>
+  <script src="../public/js/es6-module-loader-dev.js"></script>
+</head>
+<body>
+
+<script>
+//let buffer = new ArrayBuffer(1024);
+//let dv = new DataView(buffer);
+//console.log(dv.byteLength);
+
+//let buffer = new ArrayBuffer(1024);
+////32是数组长度
+//let dv = new DataView(buffer,0,32);
+//console.log(dv.byteLength);
+
+
+let buffer = new ArrayBuffer(1024);
+let dv = new DataView(buffer);
+dv.setUint8(0,1);
+console.log(dv.getInt16(0));
+console.log(dv.getInt16(0,true));
+
+
+</script>
+
+</body>
+</html>

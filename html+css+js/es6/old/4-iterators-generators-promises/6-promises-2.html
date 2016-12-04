@@ -75,33 +75,33 @@
 
 
 
-function doAsync() {
-  let p = new Promise(function (resolve, reject) {
-    setTimeout(function () {
-      resolve( '2000s' );
-    }, 2000);
-  });
-  return p;
-}
-function doAsync2() {
-  let p = new Promise(function (resolve, reject) {
-    setTimeout(function () {
-//      resolve( '4000s' );
-      reject('4000s');
-    }, 4000);
-  });
-  return p;
-}
-
-let p1 = doAsync();
-let p2 = doAsync2();
-//Promise.race：p1和p2只要有一个完成就会执行then
-Promise.race([p1,p2]).then(function (value) {
-  console.log('ok',value);
-}, function (reason) {
-  console.log('no',reason);
-});
-
+//function doAsync() {
+//  let p = new Promise(function (resolve, reject) {
+//    setTimeout(function () {
+//      resolve( '2000s' );
+//    }, 2000);
+//  });
+//  return p;
+//}
+//function doAsync2() {
+//  let p = new Promise(function (resolve, reject) {
+//    setTimeout(function () {
+////      resolve( '4000s' );
+//      reject('4000s');
+//    }, 4000);
+//  });
+//  return p;
+//}
+//
+//let p1 = doAsync();
+//let p2 = doAsync2();
+////Promise.race：p1和p2只要有一个完成就会执行then
+//Promise.race([p1,p2]).then(function (value) {
+//  console.log('ok',value);
+//}, function (reason) {
+//  console.log('no',reason);
+//});
+//
 
 
 

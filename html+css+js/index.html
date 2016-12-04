@@ -20,60 +20,70 @@
 </div>
 
 <script>
-  var arr = [];
+//  var arr = [];
+//
+//  setList({name:'asdasd', isTick:1}, 1)
+//  function setList(str, type) {
+//    if(localStorage.list==""||localStorage.list==undefined){
+//      localStorage.list = JSON.stringify([str]);
+//    }else{
+//      var arr = JSON.parse(localStorage.list);
+//      if(type == 0){
+//        arr.push(str);
+//      }else{
+//        for (var i = 0; i < arr.length; i++) {
+//          if(str.name == arr[i].name){
+//            arr[i].isTick = str.isTick;
+//            break;
+//          }
+//        }
+//      }
+//      localStorage.list = JSON.stringify(arr);
+//    }
+//
+//  }
+//
+//  function getList(type) {
+//    $.get()
+//    if(localStorage.list==""||localStorage.list==undefined) {
+//      return [];
+//    }else{
+//      var arr = JSON.parse(localStorage.list);
+//      if(type == 0){
+//        return arr;
+//      }else if(type == 1){
+//        var newArr = [];
+//        for (var i = 0; i < arr.length; i++) {
+//          if(arr[i].isTick == 0){
+//            newArr.push(arr[i]);
+//          }
+//        }
+//        return newArr;
+//      }else if(type == 2){
+//
+//        return arr;
+//      }
+//
+//    }
+//
+//  }
+//
+//  getList(0, function(data){
+//    render(data);
+//  });
+//  function getList(type, callback) {
+//    $.get('url', callback);
+//  }
 
-  setList({name:asdasd, isTick:1}, 1)
-  function setList(str, type) {
-    if(localStorage.list==""||localStorage.list==undefined){
-      localStorage.list = JSON.stringify([str]);
+
+  function test(x){
+    if(x>1){
+      return x*test(x-1);
     }else{
-      var arr = JSON.parse(localStorage.list);
-      if(type == 0){
-        arr.push(str);
-      }else{
-        for (var i = 0; i < arr.length; i++) {
-          if(str.name == arr[i].name){
-            arr[i].isTick = str.isTick;
-            break;
-          }
-        }
-      }
-      localStorage.list = JSON.stringify(arr);
+      return x;
     }
-
   }
 
-  function getList(type) {
-    $.get()
-    if(localStorage.list==""||localStorage.list==undefined) {
-      return [];
-    }else{
-      var arr = JSON.parse(localStorage.list);
-      if(type == 0){
-        return arr;
-      }else if(type == 1){
-        var newArr = [];
-        for (var i = 0; i < arr.length; i++) {
-          if(arr[i].isTick == 0){
-            newArr.push(arr[i]);
-          }
-        }
-        return newArr;
-      }else if(type == 2){
-
-        return arr;
-      }
-
-    }
-
-  }
-
-  getList(0, function(data){
-    render(data);
-  });
-  function getList(type, callback) {
-    $.get('url', callback);
-  }
 </script>
 </body>
 </html>

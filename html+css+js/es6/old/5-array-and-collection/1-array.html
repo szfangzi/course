@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+  <script src="../public/js/traceur.js"></script>
+  <script src="../public/js/es6-module-loader-dev.js"></script>
+</head>
+<body>
+
+<script>
+//  把多个参数合并成一个数组
+//  console.log(Array.of(1,2,3));
+
+//console.log(Array.from([1,2,3], v=>v+100));
+
+//类似map
+//var arr = Array.from([1,2,3], function (v) {
+//  return v + this.count;
+////  return {value:v, test:this.count};
+//}, {count:200});
+//console.log(arr);
+
+//let arr = [600,700,800];
+//元素全部替换
+//arr.fill(900);
+//元素从下标1开始替换
+//  arr.fill(900,1);
+//元素从下标1开始替换，下标2(不包含)结束
+//  arr.fill(900,1,2);
+//console.log(arr);
+
+
+//let arr = [600,700,800];
+//找到第一个符合条件的元素
+//var rs = arr.find(v => v > 650);
+//var rs = arr.find(function (v) {
+//  return v > 650;
+//});
+//找到符合条件的元素下标
+//var rs = arr.findIndex(function (v, i, arr) {
+//  return v == this;
+//}, 700);
+//console.log(rs);
+
+
+//let arr = [1,2,3,4,5];
+////从下标为1开始拷贝，即2,3,4,5，替换到下标为0开始，即1,2,3,4会被替换，所以结果是2,3,4,5,5
+//arr.copyWithin(0,1);
+////从下标为0开始拷贝，下标为2(不包含)结束，即1,2，替换到下标为3开始，即4,5会被替换，所以结果是1,2,3,1,2
+////arr.copyWithin(3,0,2);
+//console.log(arr);
+
+let arr = ['a','b','c','d','e'];
+//分解成5个数组，每个数组都保存元素下标和元素值
+console.log(...arr.entries());
+//分解成5个下标
+console.log(...arr.keys());
+//分解成5个值
+console.log(...arr.values());
+
+
+</script>
+
+</body>
+</html>
