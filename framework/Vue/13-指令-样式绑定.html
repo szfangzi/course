@@ -9,7 +9,7 @@
       color: #00aaee;
     }
     .nostyle{
-      color: red;
+      font-size: 50px;
     }
   </style>
 </head>
@@ -17,7 +17,7 @@
 
 <!--vue模板 列表-->
 <div id="app">
-  <h1 v-bind:class="{okstyle:ok,nostyle:no}">ok</h1>
+  <h1 v-bind:class="{okstyle:no,nostyle:no}">ok</h1>
 </div>
 
 <script>
@@ -30,7 +30,7 @@ var vm = new Vue({
   }
 });
 
-//  练习 把localStorage练习写好的函数拿来当模板数据，并且用循环指令在页面上显示里面的所有数据
+
 
 </script>
 </body>
