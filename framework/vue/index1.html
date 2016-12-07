@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+  <script src="public/js/vue.js"></script>
+</head>
+<body>
+
+<!--vue模板 列表-->
+<div id="app">
+  <input type="text" v-model="message" v-on:keyup.enter="msgAlert">
+  <ul>
+    <li v-for="todo in list">
+      <input type="checkbox" v-model="todo.isTick" v-on:click="check()" />{{ todo.name }}<button v-on:click="del(todo.id)">删除</button>
+    </li>
+  </ul>
+</div>
+
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue.js!',
+      list:[{name:1,isTick:1},{name:2,isTick:0}]
+    },
+    methods: {
+      del: function (id) {
+
+      },
+      msgAlert: function () {
+        this.list.push({name:this.message,isTick:0});
+        this.message = '';
+      },
+      check: function () {
+
+      }
+    }
+  })
+
+</script>
+</body>
+</html>

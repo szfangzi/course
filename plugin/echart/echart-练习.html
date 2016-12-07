@@ -16,7 +16,9 @@
 
 $.get('../../public/json/echart.json', function(data){
 
+//  相应数据的标题
   var chartTitle = [];
+//  每个标题的相应数据
   var chartData = [];
 
   for (var i = 0; i < data.length; i++) {
@@ -32,8 +34,11 @@ $.get('../../public/json/echart.json', function(data){
       data: []
     });
     data.sort(function(a,b){
-      if(a.day> b.day)return 1;
-      return -1
+      if(a.day> b.day){
+        return 1;
+      }else{
+        return -1;
+      }
     });
     for (var j = 0; j < data.length; j++) {
       if (chartTitle[i] == data[j].name){
@@ -42,9 +47,9 @@ $.get('../../public/json/echart.json', function(data){
     }
 
   }
-
-  console.log(chartTitle);
-
+//
+//  console.log(chartTitle);
+//
     var dom = document.getElementById("container");
     var myChart = echarts.init(dom);
     var option = {
@@ -103,3 +108,5 @@ function uni(arr) {
 </script>
 </body>
 </html>
+
+
