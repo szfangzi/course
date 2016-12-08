@@ -31,20 +31,27 @@
       .clear{
         clear: both;
       }
+      .clearfix:before,
+      .clearfix:after {
+        content: " ";
+        display: table; }
+
+      .clearfix:after {
+        clear: both; }
     </style>
 </head>
 <body>
 <!--传统居中布局-->
 <div class="container">
   <div class="header">header</div>
-  <div class="main">
+  <div class="main clearfix">
     <div class="content">
       content
     </div>
     <div class="aside">
       aside
     </div>
-    <div class="clear"></div>
+    <!--<div class="clear"></div>-->
   </div>
   <div class="footer">footer</div>
 
