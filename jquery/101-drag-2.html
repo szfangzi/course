@@ -30,7 +30,7 @@
     .list li{
       cursor: pointer;
     }
-    ::selection{
+    *::selection{
       text-shadow: none;
     }
   </style>
@@ -109,6 +109,7 @@ $('.list').on('dragstart', 'li', function (e) {
 });
 
 $('.directory').on('dragover', 'li', function (e) {
+//  阻止默认事件，不然不让拖拽进去
   e.preventDefault();
   $('.directory li').removeClass('on');
   var $this = $(this);

@@ -30,7 +30,7 @@
     .list li{
       cursor: pointer;
     }
-    ::selection{
+    *::selection{
       text-shadow: none;
     }
   </style>
@@ -97,6 +97,7 @@ $(window).on('hashchange', function () {
   }
 
 });
+
 
 //拖拽开始
 $('.list').on('dragstart', 'li', function (e) {

@@ -30,7 +30,7 @@
     .list li{
       cursor: pointer;
     }
-    ::selection{
+    *::selection{
       text-shadow: none;
     }
   </style>
@@ -102,7 +102,7 @@
 $('.list').on('dragstart', 'li', function (e) {
   var $this = $(this);
   var name = e.originalEvent.dataTransfer.setData('name', $this.html());
-//  用空白图片覆盖拖拽时候的奇怪文本
+//  用空白图片覆盖拖拽时候的奇怪文本(如果存在奇怪文本的话)
   e.originalEvent.dataTransfer.setDragImage(document.querySelector('#dragMouseImg'),0,0);
 
 }).on('dragend', 'li', function (e) {
@@ -127,7 +127,7 @@ $('.directory').on('dragover', 'li', function (e) {
         render(2);
       }
       renderTypeLen();
-      return true;
+      break;
     }
   }
 });
