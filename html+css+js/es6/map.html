@@ -3,8 +3,8 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>无标题文档</title>
-  <script src="public/js/traceur.js"></script>
-  <script src="public/js/es6-module-loader-dev.js"></script>
+  <!--<script src="public/js/traceur.js"></script>-->
+  <!--<script src="public/js/es6-module-loader-dev.js"></script>-->
 </head>
 <body>
 <div></div>
@@ -14,19 +14,38 @@
 <div></div>
 <div></div>
 <script>
-//  Map数据结构。它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，Object结构提供了“字符串—值”的对应，Map结构提供了“值—值”的对应，是一种更完善的Hash结构实现。如果你需要“键值对”的数据结构，Map比Object更合适。
-var m = new Map();
-var o = {p: 'Hello World'};
+//1.  Map数据结构。它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，Object结构提供了“字符串—值”的对应，Map结构提供了“值—值”的对应，是一种更完善的Hash结构实现。如果你需要“键值对”的数据结构，Map比Object更合适。
+//var m = new Map();
+//var o = {p: 'Hello World'};
+//
+//m.set(o, 'content')
+//console.log(m.get(o)) // "content"
+//
+//m.has(o) // true
+//m.delete(o) // true
+//m.has(o) // false
 
-m.set(o, 'content')
-m.get(o) // "content"
+//2.作为构造函数，Map也可以接受一个数组作为参数。该数组的成员是一个个表示键值对的数组。
+var items = [
+  ['name', '张三'],
+  ['title', 'Author']
+];
+var map = new Map();
+items.forEach(function ([key, value]) {
+  map.set(key, value);
+});
 
-m.has(o) // true
-m.delete(o) // true
-m.has(o) // false
-
-
-
+//3. 等价于上边的例子2
+//var map = new Map([
+//  ['name', '张三'],
+//  ['title', 'Author']
+//]);
+//
+//map.size // 2
+//map.has('name') // true
+//map.get('name') // "张三"
+//map.has('title') // true
+//map.get('title') // "Author"
 
 
 
