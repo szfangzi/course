@@ -50,6 +50,23 @@
 //css3
 //  this
 
+var parent = {a:1,b:{c:3}};
+var child = {d:1};
+
+function extend(c,p) {
+  for (var i in p) {
+    if (typeof p[i] === 'object') {
+　　  c[i] = (p[i].constructor === Array) ? [] : {};
+      extend(c[i],p[i]);
+    } else {
+　　　c[i] = p[i];
+    }
+
+  }
+}
+extend(child, parent);
+console.log(child);
+console.log(parent);
 </script>
 </body>
 </html>
