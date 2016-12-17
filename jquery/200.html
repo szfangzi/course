@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+  <style>
+    form:before{
+      content: 'asdasd';
+    }
+  </style>
   <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
 </head>
 <body>
@@ -15,6 +20,20 @@
   <!--type=submit是提交表单的按钮-->
   <button type="submit" id="submit">提交</button>
 </form>
+<img src="../public/img/smbg.png" alt="">
+<img src="../public/img/smbg.png" alt="">
+
+<input type="checkbox" name="" id="c1">
+<input type="checkbox" name="" id="c2">
+<input type="checkbox" name="" id="c3">
+
+
+<button id="btn">点名</button>
+<ul id="test">
+  <li>这是第一条</li>
+  <li>这是第二条</li>
+  <li>这是第三条</li>
+</ul>
 
 <script>
 
@@ -50,23 +69,26 @@
 //css3
 //  this
 
-var parent = {a:1,b:{c:3}};
-var child = {d:1};
-
-function extend(c,p) {
-  for (var i in p) {
-    if (typeof p[i] === 'object') {
-　　  c[i] = (p[i].constructor === Array) ? [] : {};
-      extend(c[i],p[i]);
-    } else {
-　　　c[i] = p[i];
-    }
-
+//随机点名
+var list = ['林锦洋','鲁丹','吴奕','小肖','alan','林锦洋','鲁丹','吴奕','小肖','alan','林锦洋','鲁丹','吴奕','小肖','alan'];
+var i = 1;
+var flag = true;
+var test = setInterval(function () {
+  if(i == 15){
+    i = 1;
+  }else{
+    i++;
   }
-}
-extend(child, parent);
-console.log(child);
-console.log(parent);
+},1);
+$('#btn').on('click', function () {
+  console.log(list[i-1]);
+});
+
+
+
+
 </script>
 </body>
 </html>
+
+
