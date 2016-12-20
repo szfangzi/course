@@ -15,7 +15,8 @@
       width: 500px;
       margin-left: 100px;
     }
-.directory li, .list li{
+.directory li, .list a{
+  display: block;
   width: 200px;
   height: 50px;
   text-align: center;
@@ -27,7 +28,7 @@
     .directory li.on{
       background-color: #c9302c;
     }
-    .list li{
+    .list a{
       cursor: pointer;
     }
     *::selection{
@@ -53,7 +54,7 @@
 
 <script type="text/template" id="listTmpl">
 <% for(var i=0;i<list.length;i++){ %>
-<li><%= list[i].name %></li>
+<a href="javascript:;"><%= list[i].name %></a>
 <% } %>
 </script>
 <script src="../public/js/ejs.min.js"></script>
@@ -99,12 +100,12 @@
   });
 
 
-$('.list').on('dragstart', 'li', function (e) {
+$('.list').on('dragstart', 'a', function (e) {
   var $this = $(this);
 //  拖拽传输 文件名 数据
   var name = e.originalEvent.dataTransfer.setData('name', $this.html());
 
-}).on('dragend', 'li', function (e) {
+}).on('dragend', 'a', function (e) {
   $('.directory li').removeClass('on');
 });
 

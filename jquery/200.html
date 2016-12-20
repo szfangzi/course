@@ -84,7 +84,50 @@ $('#btn').on('click', function () {
   console.log(list[i-1]);
 });
 
+var obj = {
+  css: function () {
+    console.log('css');
+    return this;
+  },
+  show: function () {
+    console.log('show');
+  }
+}
 
+function save(key, val){
+  val = JSON.stringify(val);
+  localStorage.setItem(key, val);
+}
+
+//  练习2 写一个函数，功能是返回localStorage中指定key的值
+function get(key){
+  var val = localStorage.getItem(key);
+  val = JSON.parse(val);
+  return val;
+}
+function store(key, val) {
+  if(arguments.length > 1){
+    val = JSON.stringify(val);
+    localStorage.setItem(key, val);
+  }else{
+    var val = localStorage.getItem(key);
+    val = JSON.parse(val);
+    return val;
+  }
+}
+
+var arr = [{name:'ken',isTick:1},{name:'ann',isTick:0},{name:'jane',isTick:0}];
+console.log(filter(arr));
+
+function filter(arr) {
+  var newArr = [];
+  for (var i = 0; i < arr.length; i++) {
+    if(arr[i].isTick == 1){
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
 
 
 </script>

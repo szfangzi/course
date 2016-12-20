@@ -96,32 +96,30 @@
 //console.log(map[Symbol.iterator] === map.entries);
 
 
-let map = new Map([
-  [1, 'one'],
-  [2, 'two'],
-  [3, 'three']
-]);
+//let map = new Map([
+//  [1, 'one'],
+//  [2, 'two'],
+//  [3, 'three']
+//]);
+//
+//console.log([...map.keys()]);
+//// [1, 2, 3]
+//
+//console.log([...map.values()]);
+//// ['one', 'two', 'three']
+//
+//console.log([...map.entries()]);
+//// [[1,'one'], [2, 'two'], [3, 'three']]
+//
+//console.log([...map]);
+//// [[1,'one'], [2, 'two'], [3, 'three']]
 
-console.log([...map.keys()]);
-// [1, 2, 3]
-
-console.log([...map.values()]);
-// ['one', 'two', 'three']
-
-console.log([...map.entries()]);
-// [[1,'one'], [2, 'two'], [3, 'three']]
-
-console.log([...map]);
-// [[1,'one'], [2, 'two'], [3, 'three']]
 
 
-
-let map0 = new Map()
-  .set(1, 'a')
-  .set(2, 'b')
-  .set(3, 'c');
-var x = map0.filter(([k, v]) => k < 3);
-console.log(x);
+let map0 = [1,2,3];
+var x = map0.forEach(function (k,v,list) {
+  console.log(this.a);
+},{a:1})
 </script>
 
 </body>

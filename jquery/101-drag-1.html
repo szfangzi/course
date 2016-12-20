@@ -15,7 +15,8 @@
       width: 500px;
       margin-left: 100px;
     }
-.directory li, .list li{
+.directory li, .list a{
+  display: block;
   width: 200px;
   height: 50px;
   text-align: center;
@@ -53,7 +54,7 @@
 
 <script type="text/template" id="listTmpl">
 <% for(var i=0;i<list.length;i++){ %>
-<li><%= list[i].name %></li>
+<a href="javascript:;"><%= list[i].name %></a>
 <% } %>
 </script>
 <script src="../public/js/ejs.min.js"></script>
@@ -100,11 +101,11 @@ $(window).on('hashchange', function () {
 
 
 //拖拽开始
-$('.list').on('dragstart', 'li', function (e) {
+$('.list').on('dragstart', 'a', function (e) {
   console.log('dragstart');
 
 //  拖拽结束
-}).on('dragend', 'li', function (e) {
+}).on('dragend', 'a', function (e) {
   console.log('dragend');
 });
 
