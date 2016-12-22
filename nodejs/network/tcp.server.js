@@ -1,9 +1,9 @@
 var net = require('net');
 
-//net模块建立tcp服务器
+//net模块建立tcp服务器，本质上是EventEmitter的实例
 //方法1
 var server = net.createServer();
-//客户端套接字链接到服务端时触发
+//客户端套接字链接到服务端时触发，因为一个客户端套接字只能对应一个服务端套接字，所以每一个新客户端的请求服务端都生成一个新socket与之连接
 server.on('connection', function (socket) {
   //客户端有输入数据就触发data事件
   socket.on('data', function (data) {
@@ -17,8 +17,8 @@ server.on('connection', function (socket) {
   socket.on('end', function () {
     console.log('连接断开');
   });
-  //客户端打印欢迎信息
-  socket.write('welcome\n');
+
+
 });
 
 
@@ -59,6 +59,7 @@ server.on('connection', function (socket) {
 server.listen(8124, function () {
   console.log('服务器绑定8124端口');
 });
+
 
 //setTimeout(function () {
 //  //调用close方法会触发close事件
