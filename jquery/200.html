@@ -129,7 +129,9 @@ function filter(arr) {
   return newArr;
 }
 
-
+$.get('http://localhost:1337/list?a=1', function (data) {
+  console.log(data);
+});
 
 </script>
 </body>
