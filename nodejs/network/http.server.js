@@ -8,13 +8,14 @@ http.createServer(function (req, res) {
     console.log(trunk);
   }).on('end', function () {
     var buffer = Buffer.concat(buffers);
+    console.log(buffer);
     res.end(buffer);
   })
-  if(req.url == '/'){
-    res.end('这是首页');
-  }else if(req.url == '/list'){
-    res.end('这是列表页');
-  }
+  //if(req.url == '/'){
+  //  res.end('这是首页');
+  //}else if(req.url == '/list'){
+  //  res.end('这是列表页');
+  //}
 
 }).listen(1337);
 console.log('Server runing at http://localhost:1337/');
