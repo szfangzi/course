@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <title></title>
   <style>
-    form:before{
-      content: 'asdasd';
+    html{
+      background-color: blue;
     }
+    @-moz-document url-prefix(){
+      html{background-color: red;}/* all firefox */
+    }
+
   </style>
   <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
 </head>
@@ -116,22 +120,47 @@ function store(key, val) {
   }
 }
 
-var arr = [{name:'ken',isTick:1},{name:'ann',isTick:0},{name:'jane',isTick:0}];
-console.log(filter(arr));
+//var xhr = new XMLHttpRequest();
+//xhr.open('GET','http://localhost:1337',true);
+//xhr.setRequestHeader('Expect','100-continue');
+//xhr.send();
+//$.ajax({
+//  url: 'http://localhost:1337',
+//  headers:{'Expect':'100-continue'},
+//  success: function (data) {
+//    console.log(data);
+//  }
+//});
 
-function filter(arr) {
-  var newArr = [];
-  for (var i = 0; i < arr.length; i++) {
-    if(arr[i].isTick == 1){
-      newArr.push(arr[i]);
-    }
+//for(var j=1;j<=3;j++){
+//  (function test(){
+//    console.log(j);
+//  }());
+//};
+var add = '+';
+var min1 = '-';
+var min2 = '-';
+var str = '12345';
+var sign = 2;
+var tmp = [[0,1,2,5],[0,1,3,5],[0,1,4,5],[0,2,3,5],[0,2,4,5],[0,3,4,5]];
+var numArr = [];
+
+for (var j = 0; j < tmp.length; j++) {
+  numArr.push([]);
+  for (var k = 0; k < sign+1; k++) {
+    var a = str.substring(tmp[j][k],tmp[j][k+1]);
+    numArr[j].push(a);
   }
-  return newArr;
 }
+//  for (var j = 0; j < tmp.length; j++) {
+//    numArr.push([]);
+//    for (var k = 0; k < sign+1; k++) {
+//      var a = str.substring(tmp[j][k],tmp[j][k+1]);
+//      numArr[j].push(a);
+//    }
+//  }
 
-$.get('http://localhost:1337/list?a=1', function (data) {
-  console.log(data);
-});
+console.log(numArr);
 
 </script>
 </body>
