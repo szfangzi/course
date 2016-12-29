@@ -137,31 +137,111 @@ function store(key, val) {
 //    console.log(j);
 //  }());
 //};
-var add = '+';
-var min1 = '-';
-var min2 = '-';
-var str = '12345';
-var sign = 2;
-var tmp = [[0,1,2,5],[0,1,3,5],[0,1,4,5],[0,2,3,5],[0,2,4,5],[0,3,4,5]];
+
+
+//1.递归
+//2.栈
+//3.for( i= 0; i < n^N; i++)
+//{
+//……
+//}
+//4.for+while
+
+var operators = ['+','-','-'];
+//数字字符串
+var str = '123456789';
+var strLen = str.length;
+//多少个运算符号
+var sign = 3;
+//字符串分割的下标数组
+var tmp = [];
+//0和字符串str长度5为固定的，所以str的组合数为C(strLen-1,sign)=(strLen-1)!/sign!((strLen-1)-sign)!
+//即C(5-1,2)=(5-1)!/2!((5-1)-2)! = 6
+//var tmp = [[0,1,2,5],[0,1,3,5],[0,1,4,5],[0,2,3,5],[0,2,4,5],[0,3,4,5]];
+//分割好的字符串数组
 var numArr = [];
+
+for (var m = 1; m <= str.length-3; m++) {
+  for (var l = m+1; l <= str.length-2; l++) {
+    for (var n = l+1; n <= str.length-1; n++) {
+      tmp.push([0,m,l,n,str.length]);
+    }
+  }
+}
+//console.log(tmp);
+//var arrr = [];
+//tmp = combination(str, sign, 0, []);
+//function combination(numStr, numPerGroup, init, tmpList) {
+//
+//  for (let m = init+1; m <= numStr.length-numPerGroup; m++) {
+//    tmpList.push(m)
+//    if(numPerGroup > 1) {
+//
+//      combination(numStr, numPerGroup - 1, m, tmpList);
+//    }else{
+//      console.log(tmpList);
+//    }
+//  }
+//  return tmpList;
+//}
+console.log(tmp);
+//var groupNum = factorial(strLen-1)/(factorial(sign)*factorial((strLen-1)-sign));
+//for (var m = 0; m < sign; m++) {
+//  tmp.push([0]);
+//  for (var l = 1; l <= str.length; l++) {
+//
+//  }
+//  tmp[m].push(str.length);
+//}
+//console.log(groupNum);
+//6 4 6
+//7 4 10
+//[[0,1,2,6],[0,1,3,6],[0,1,4,6],[0,1,5,6],[0,2,3,6],[0,2,4,6],[0,2,5,6],[0,3,4,6],[0,3,5,6],[0,4,5,6]]
+
+
 
 for (var j = 0; j < tmp.length; j++) {
   numArr.push([]);
   for (var k = 0; k < sign+1; k++) {
+//    根据字符串分割的下标数组循环分割字符串
     var a = str.substring(tmp[j][k],tmp[j][k+1]);
     numArr[j].push(a);
   }
 }
-//  for (var j = 0; j < tmp.length; j++) {
-//    numArr.push([]);
-//    for (var k = 0; k < sign+1; k++) {
-//      var a = str.substring(tmp[j][k],tmp[j][k+1]);
-//      numArr[j].push(a);
-//    }
-//  }
+//console.log(numArr);
+for (var z = 0; z < numArr.length; z++) {
+  var tmpArr = numArr[z];
+  var sum = 0;
 
-console.log(numArr);
+  var sum1 = eval(tmpArr[0]+operators[0]+tmpArr[1]+operators[1]+tmpArr[2]+operators[2]+tmpArr[3]);
+  var sum2 = eval(tmpArr[0]+operators[1]+tmpArr[1]+operators[0]+tmpArr[2]+operators[2]+tmpArr[3]);
+  var sum3 = eval(tmpArr[0]+operators[2]+tmpArr[1]+operators[1]+tmpArr[2]+operators[0]+tmpArr[3]);
+  if(sum1 == 100){
+    console.log(tmpArr);
+    console.log(tmpArr[0]+operators[0]+tmpArr[1]+operators[1]+tmpArr[2]+operators[2]+tmpArr[3]);
+  }
+  if(sum2 == 100){
+    console.log(tmpArr);
+    console.log(tmpArr[0]+operators[1]+tmpArr[1]+operators[0]+tmpArr[2]+operators[2]+tmpArr[3]);
+  }
+  if(sum3 == 100){
+    console.log(tmpArr);
+    console.log(tmpArr[0]+operators[2]+tmpArr[1]+operators[1]+tmpArr[2]+operators[0]+tmpArr[3]);
+  }
+//  console.log(sum);
+}
 
+
+
+//阶乘
+function factorial(n) {
+  if(n>1){
+    return arguments.callee(n-1)*n;
+  }else{
+    return 1;
+  }
+
+}
 </script>
 </body>
 </html>
