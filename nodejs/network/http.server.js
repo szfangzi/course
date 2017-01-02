@@ -10,7 +10,7 @@ var server = http.createServer(function (req, res) {
   //报文头也可以在writeHead的时候再传对象
   //其中Connection如果是close，那么请求完毕会关闭连接，下次请求需要再次连接，浪费流量，一般默认的话是keep-alive，请求后一直保持连接
   //res.writeHead(200, {'Content-Type':'text/plain', 'Connection':'close'});
-  res.writeHead(200, {'Content-Type':'text/plain'});
+  res.writeHead(200, {'Content-Type':'text/plain', 'Connection':'keep-alive'});
 
   var buffers = [];
 
@@ -47,12 +47,16 @@ server.on('close', function (incomingMessage){
   console.log('服务端没有启用长连接，当server.close()后并且TCP连接也关闭了，这个时候就触发了close事件');
 });
 //xhr.setRequestHeader('Expect','100-continue')的时候回触发，浏览器禁止修改Expect，所以暂无效果
-server.on('checkContinue', function (){
-  console.log('检查内容，与request事件互斥');
+//server.on('checkContinue', function (){
+//  console.log('检查内容，与request事件互斥');
+//});
+//server.on('connect', function (){
+//  console.log('请求方法为connect');
+//});
+//server.on('upgrade', function (){
+//  console.log('协议升级');
+//});
+server.on('clientError', function (){
+  console.log('客户端触发了error事件');
 });
-server.on('connect', function (socket){
-  console.log(111);
-  console.log('检查内容，与request事件互斥');
-});
-
 console.log('Server runing at http://localhost:1337/');
