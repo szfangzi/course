@@ -5,12 +5,13 @@
     <title></title>
 </head>
 <body>
+<script src="util.js"></script>
 <script>
-//  题目：一串数字通过插入指定数个运算符号使等于指定结果
-
-  var operators = ['+','-','*'];
+  //  题目：一串数字通过插入指定数个运算符号使等于指定结果
+  Util.calStartTime();
+  var operators = ['+','-','-'];
   //数字字符串
-  var str = '15001420102';
+  var str = '15001420200';
   var strLen = str.length;
   //多少个运算符号
   var sign = operators.length;
@@ -84,7 +85,7 @@
     for (let k = 0; k < operatorsTmp.length; k++) {
       var sumStr = "";
       for (let j = 0; j < sign; j++) {
-        sumStr+=tmpArr[j]+operators[operatorsTmp[k][j]];
+        sumStr+=parseInt(tmpArr[j])+operators[operatorsTmp[k][j]];
       }
       sumStr+=tmpArr[sign];
       if(eval(sumStr)==target){
@@ -98,7 +99,7 @@
   for (let t = 0; t < rsList.length; t++) {
     console.log(rsList[t]);
   }
-
+  Util.logCalTime();
 
   //  去重
   function dif(arr) {
@@ -112,24 +113,7 @@
   }
 
 
-  //for (var m = 1; m <= str.length-3; m++) {
-  //  for (var l = m+1; l <= str.length-2; l++) {
-  //    for (var n = l+1; n <= str.length-1; n++) {
-  //      tmp.push([0,m,l,n,str.length]);
-  //    }
-  //  }
-  //}
-  //console.log(tmp);
-  //for (let j = 0; j < sign; j++) {
-  //  for (let k = 0; k < sign; k++) {
-  //    for (let l = 0; l < sign; l++) {
-  //      let tmpM = [j,k,l];
-  //      if(dif(tmpM).length == tmpM.length){
-  //        operatorsTmp.push([j,k,l]);
-  //      }
-  //    }
-  //  }
-  //}
+
 </script>
 </body>
 </html>
