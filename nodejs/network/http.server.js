@@ -47,9 +47,9 @@ server.on('close', function (incomingMessage){
   console.log('服务端没有启用长连接，当server.close()后并且TCP连接也关闭了，这个时候就触发了close事件');
 });
 //xhr.setRequestHeader('Expect','100-continue')的时候回触发，浏览器禁止修改Expect，所以暂无效果
-//server.on('checkContinue', function (){
-//  console.log('检查内容，与request事件互斥');
-//});
+server.on('checkContinue', function (){
+  console.log('检查内容，与request事件互斥');
+});
 //server.on('connect', function (){
 //  console.log('请求方法为connect');
 //});
