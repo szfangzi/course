@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+
+<script>
+  function P() {}
+  P.prototype.test = function () {
+    console.log('test1');
+  };
+  function C() {}
+  C.prototype.test2 = function () {
+    console.log('test2');
+  };
+//  重载
+  C.prototype.test = function () {
+    console.log(this);
+    console.log('test1 re');
+  };
+//  原型链继承
+  C.prototype.__proto__ = P.prototype;
+
+var c = new C();
+  console.log(c);
+//  通过原型链拿到被重载之前的父类函数
+//  c.__proto__.__proto__.test
+</script>
+</body>
+</html>

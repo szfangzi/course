@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+
+<script>
+  var val = {a:1,b:{c:3}};
+  Date.prototype.__defineGetter__('ago', function () {
+    var diff = ((new Date()).getTime() - this.getTime() ) / 1000;
+    return diff;
+  });
+  Date.prototype.__defineGetter__('val', function () {
+    return val;
+  });
+  Date.prototype.__defineSetter__('val', function (ss) {
+    val = ss;
+  });
+
+  var d = new Date();
+  var obj = {a:1,b:{c:3}};
+  var z = 2;
+  Object.defineProperty(obj,'val',{
+    set: function (x) {
+      z = x;
+    },
+    get: function () {
+      return z;
+    }
+  })
+
+</script>
+</body>
+</html>
