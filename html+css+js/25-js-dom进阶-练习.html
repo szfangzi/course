@@ -21,6 +21,20 @@ document.querySelector('#input').addEventListener('keypress', function (e) {
 });
 
 
+//拓展
+//自定义事件
+//绑定事件与函数
+addEventListener('test', function () {
+  console.log(1,'test');
+});
+//新建自定义事件
+var event = document.createEvent('HTMLEvents');
+// 3个参数：事件类型，是否冒泡，是否阻止浏览器的默认行为
+event.initEvent('test', true, true);
+
+//触发事件
+dispatchEvent(event);
+
 </script>
 
 </body>

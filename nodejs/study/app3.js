@@ -4,5 +4,7 @@ require('./module2.js');
 
 //暴露api
 var m3 = require('./module3.js');
-m3.test();
-console.log(m3.name);
+var m4 = require('./module4.js');
+console.log(m3);
+console.log(m4);
+
