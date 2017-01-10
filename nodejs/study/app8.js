@@ -68,10 +68,10 @@ console.log(process.argv);
 
 //获取该程序运行时的目录
 console.log(__dirname);
-//获取调用该程序的目录,比如在nodejs目录执行node study/app8.js
+//获取调用该程序的目录,比如在nodejs目录执行node study/app8.js，那么打印nodejs目录
 console.log(process.cwd());
 //改变目录
-console.log(process.chdir('/'));
+process.chdir('/');
 console.log(process.cwd());
 
 //打印环境变量

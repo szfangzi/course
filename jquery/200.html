@@ -138,7 +138,9 @@ function store(key, val) {
 //  }());
 //};
 
-
+$.getJSON('http://192.168.4.110:3000/jsonp?callback=?', function (data) {
+  console.log(data);
+});
 
 </script>
 </body>
