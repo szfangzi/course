@@ -27,15 +27,26 @@ var server = http.createServer(function (req, res) {
       res.end('<p>Content-Type:'+req.headers['content-type']+'</p><p>Data:</p><pre>'+qs.parse(body).name+'</pre>');
     });
   }else if('/api' == req.url){
-    http.request({
+
+    //http.request({
+    //  host:'127.0.0.1',
+    //  port:3000,
+    //  path:'/api2',
+    //  method:'GET'
+    //}, function (res2) {
+    //  res.writeHead(200, {'Content-Type':'image/png'});
+    //  res2.pipe(res);
+    //}).end();
+
+//get不需要end()
+    http.get({
       host:'127.0.0.1',
       port:3000,
-      path:'/api2',
-      method:'GET'
+      path:'/api2'
     }, function (res2) {
       res.writeHead(200, {'Content-Type':'image/png'});
       res2.pipe(res);
-    }).end();
+    });
 
   }else if('/api2' == req.url){
     res.writeHead(200, {'Content-Type':'image/png'});
