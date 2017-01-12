@@ -15,6 +15,11 @@ app.use(function (req, res, next) {
   console.log(2);
   next();
 });
+app.use(function (req, res, next) {
+  console.log(3);
+  res.writeHead(404);
+  res.end('not found');
+});
 
 http.createServer(app).listen(3000);
 
