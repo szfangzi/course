@@ -9,7 +9,7 @@ var server = http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type':'text/html'});
     res.end(
       '<form method="POST" action="/url">'+
-      '<h1>My Form</h1>'+
+      '<h1>My Form1</h1>'+
       '<p>your name?</p>'+
       '<input type="text" name="name">'+
       '<input type="text" name="name1">'+
