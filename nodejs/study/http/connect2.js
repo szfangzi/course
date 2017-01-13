@@ -1,6 +1,6 @@
 var http = require('http');
 var connect = require('connect');
-var serveStatic = require('serve-static')
+var serveStatic = require('serve-static');
 
 var app = connect();
 //处理静态资源

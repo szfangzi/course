@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+  <script src="public/jquery.js"></script>
+</head>
+<body>
+
+<script>
+  $.post('http://localhost:3000/hi',{a:{b:1}}, function (data) {
+    console.log(data);
+  });
+</script>
+</body>
+</html>

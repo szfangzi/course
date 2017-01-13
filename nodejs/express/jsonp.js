@@ -25,9 +25,9 @@ app.get('/data',function(req,res,next){
 });
 
 app.get('/json',function(req,res,next){
-  res.jsonp({status:'json'});
+  res.json({status:'json'});
 });
 
 http.createServer(app).listen(3000, function(){
-  console.log("Express server listening on port ");
+  console.log("Express server listening on port 3000 ");
 });
