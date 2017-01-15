@@ -72,21 +72,27 @@
 //html5
 //css3
 //  this
-
+var arrr = [0,0,0,0,0,0];
 //随机点名
-var list = ['林锦洋','鲁丹','吴奕','小肖','alan','林锦洋','鲁丹','吴奕','小肖','alan','林锦洋','鲁丹','吴奕','小肖','alan'];
-var i = 1;
-var flag = true;
-var test = setInterval(function () {
-  if(i == 15){
-    i = 1;
-  }else{
-    i++;
-  }
-},1);
+var list = ['梁彬玲','刘先义','刘振江','王坤','肖双丽','周冲'];
+var tmp = [];
+
 $('#btn').on('click', function () {
-  console.log(list[i-1]);
+  ran();
 });
+
+function ran() {
+  if(tmp.length == list.length){
+    tmp = [];
+  }
+  var num = Math.floor(Math.random()*1000)%6;
+  if(tmp.indexOf(list[num]) < 0){
+    tmp.push(list[num]);
+    console.log(list[num]);
+  }else{
+    ran();
+  }
+}
 
 var obj = {
   css: function () {
@@ -96,7 +102,7 @@ var obj = {
   show: function () {
     console.log('show');
   }
-}
+};
 
 function save(key, val){
   val = JSON.stringify(val);
@@ -120,25 +126,8 @@ function store(key, val) {
   }
 }
 
-//var xhr = new XMLHttpRequest();
-//xhr.open('GET','http://localhost:1337',true);
-//xhr.setRequestHeader('Expect','100-continue');
-//xhr.send();
-//$.ajax({
-//  url: 'http://localhost:1337',
-//  headers:{'Expect':'100-continue'},
-//  success: function (data) {
-//    console.log(data);
-//  }
-//});
-
-//for(var j=1;j<=3;j++){
-//  (function test(){
-//    console.log(j);
-//  }());
-//};
-
-$.getJSON('http://192.168.4.110:3000/jsonp?callback=?', function (data) {
+//jsonp简写
+$.getJSON('http://192.168.4.110:3000/data?callback=?', function (data) {
   console.log(data);
 });
 
