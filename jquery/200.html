@@ -32,7 +32,7 @@
 <input type="checkbox" name="" id="c3">
 
 
-<button id="btn">点名</button>
+<button id="btn" class="btn">点名</button>
 <ul id="test">
   <li>这是第一条</li>
   <li>这是第二条</li>
@@ -74,7 +74,7 @@
 //  this
 var arrr = [0,0,0,0,0,0];
 //随机点名
-var list = ['梁彬玲','刘先义','刘振江','王坤','肖双丽','周冲'];
+var list = ['梁彬玲','刘先义','刘振江','肖双丽'];
 var tmp = [];
 
 $('#btn').on('click', function () {
@@ -85,7 +85,7 @@ function ran() {
   if(tmp.length == list.length){
     tmp = [];
   }
-  var num = Math.floor(Math.random()*1000)%6;
+  var num = Math.floor(Math.random()*1000)%4;
   if(tmp.indexOf(list[num]) < 0){
     tmp.push(list[num]);
     console.log(list[num]);
@@ -127,9 +127,15 @@ function store(key, val) {
 }
 
 //jsonp简写
-$.getJSON('http://192.168.4.110:3000/data?callback=?', function (data) {
-  console.log(data);
-});
+//$.getJSON('http://192.168.4.110:3000/data?callback=?', function (data) {
+//  console.log(data);
+//});
+
+//有这样一个URL：http://item.taobao.com/item.htm?a=1&b=2&c=&d=xxx&e，请写一段JS程序提取URL中的各个GET参数(参数名和参数个数不确定)，将其按key-value形式返回到一个json结构中，如{a:’1′, b:’2′, c:”, d:’xxx’, e:undefined}。
+
+
+var str = '{"a":1}';
+
 
 </script>
 </body>
