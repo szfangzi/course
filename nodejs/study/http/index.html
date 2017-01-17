@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <title></title>
   <script src="public/jquery.js"></script>
+  <style>
+    #div span{color:green}
+    .p span{color: blue}
+    span{color:red}
+
+  </style>
 </head>
 <body>
-
+<div id="div">
+  <p class="p">
+    <span>1111111111111111</span>
+  </p>
+</div>
 <script>
-  $.post('http://localhost:3000/hi',{a:{b:1}}, function (data) {
-    console.log(data);
-  });
+//  $.post('http://localhost:3000/hi',{a:{b:1}}, function (data) {
+//    console.log(data);
+//  });
 </script>
 </body>
 </html>
